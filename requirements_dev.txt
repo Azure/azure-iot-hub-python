@@ -1,0 +1,6 @@
+wheel>=0.32.1
+black
+pre-commit
+twine
+pylint
+flake8

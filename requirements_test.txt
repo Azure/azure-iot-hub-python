@@ -1,0 +1,5 @@
+pytest
+pytest-mock
+pytest-testdox>=1.1.1
+pytest-cov
+pytest-timeout
