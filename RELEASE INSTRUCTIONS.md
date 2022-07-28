@@ -1,4 +1,4 @@
-# How to release Python (Preview)
+# How to release Python
 
 This document details how to do a **manual** release of the Azure IoT Hub service library
 
@@ -23,14 +23,16 @@ python setup.py sdist
 python setup.py bdist_wheel
 ```
 
-**NOTE WELL:** These commands **must** be run from within the root, or the resulting distributions will not be correctly configured.
+**NOTE WELL:** These commands **must** be run from within the root
 
 When the commands are run, a `./dist` directory will be created within the root containing both an sdist (`.tar.gz`) and a universal wheel (`.whl`).
 
 e.g.
 ```
 .
-+-- azure/iot/hub
++-- azure
+    +-- iot
+        +-- hub
 +-- setup.py
 +-- setup.cfg
 +-- ...
@@ -39,7 +41,7 @@ e.g.
     +-- azure_iot_hub-<version>-py2.py3-none-any.whl
 ```
 
-**NOTE:** Universal wheel configuration is set in the `setup.cfg` for each package, which is why you don't need to provide it as a command line argument.
+**NOTE:** Universal wheel configuration is set in the `setup.cfg`, which is why you don't need to provide it as a command line argument.
 
 ## Upload to PyPi
 Now, simply upload the contents of the `./dist` directory to PyPi:
