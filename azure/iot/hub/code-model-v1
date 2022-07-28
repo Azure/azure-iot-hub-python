@@ -175,7 +175,7 @@
      ],
      "name": "ConfigurationContent",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/ConfigurationContent"
+        "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/ConfigurationContent"
      ]
     }
    },
@@ -299,7 +299,7 @@
      ],
      "name": "ConfigurationMetrics",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/ConfigurationMetrics"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/ConfigurationMetrics"
      ]
     }
    },
@@ -724,7 +724,7 @@
      ],
      "name": "Configuration",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/Configuration"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/Configuration"
      ]
     }
    },
@@ -826,7 +826,7 @@
      ],
      "name": "SymmetricKey",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/SymmetricKey"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/SymmetricKey"
      ]
     }
    },
@@ -928,7 +928,7 @@
      ],
      "name": "X509Thumbprint",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/X509Thumbprint"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/X509Thumbprint"
      ]
     }
    },
@@ -1023,7 +1023,7 @@
        ],
        "name": "AuthenticationMechanism-type",
        "originalLocations": [
-        "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/AuthenticationMechanism-type"
+        "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/AuthenticationMechanism-type"
        ]
       }
      },
@@ -1099,7 +1099,7 @@
      ],
      "name": "AuthenticationMechanism",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/AuthenticationMechanism"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/AuthenticationMechanism"
      ]
     }
    },
@@ -1165,7 +1165,7 @@
      ],
      "name": "DeviceCapabilities",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/DeviceCapabilities"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/DeviceCapabilities"
      ]
     }
    },
@@ -1313,7 +1313,7 @@
        ],
        "name": "Device-connectionState",
        "originalLocations": [
-        "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/Device-connectionState"
+        "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/Device-connectionState"
        ]
       }
      },
@@ -1388,7 +1388,7 @@
        ],
        "name": "Device-status",
        "originalLocations": [
-        "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/Device-status"
+        "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/Device-status"
        ]
       }
      },
@@ -1738,7 +1738,7 @@
      ],
      "name": "Device",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/Device"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/Device"
      ]
     }
    },
@@ -1861,7 +1861,7 @@
      ],
      "name": "PropertyContainer",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/PropertyContainer"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/PropertyContainer"
      ]
     }
    },
@@ -2009,7 +2009,7 @@
        ],
        "name": "ExportImportDevice-importMode",
        "originalLocations": [
-        "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/ExportImportDevice-importMode"
+        "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/ExportImportDevice-importMode"
        ]
       }
      },
@@ -2109,7 +2109,7 @@
        ],
        "name": "ExportImportDevice-status",
        "originalLocations": [
-        "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/ExportImportDevice-status"
+        "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/ExportImportDevice-status"
        ]
       }
      },
@@ -2420,7 +2420,7 @@
      ],
      "name": "ExportImportDevice",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/ExportImportDevice"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/ExportImportDevice"
      ]
     }
    },
@@ -2543,7 +2543,7 @@
      ],
      "name": "TwinProperties",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/TwinProperties"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/TwinProperties"
      ]
     }
    },
@@ -2842,7 +2842,7 @@
        ],
        "name": "Twin-status",
        "originalLocations": [
-        "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/Twin-status"
+        "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/Twin-status"
        ]
       }
      },
@@ -2992,7 +2992,7 @@
        ],
        "name": "Twin-connectionState",
        "originalLocations": [
-        "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/Twin-connectionState"
+        "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/Twin-connectionState"
        ]
       }
      },
@@ -3143,7 +3143,7 @@
        ],
        "name": "Twin-authenticationType",
        "originalLocations": [
-        "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/Twin-authenticationType"
+        "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/Twin-authenticationType"
        ]
       }
      },
@@ -3314,7 +3314,7 @@
      ],
      "name": "Twin",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/Twin"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/Twin"
      ]
     }
    },
@@ -3464,7 +3464,7 @@
        ],
        "name": "JobProperties-type",
        "originalLocations": [
-        "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/JobProperties-type"
+        "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/JobProperties-type"
        ]
       }
      },
@@ -3599,7 +3599,7 @@
        ],
        "name": "JobProperties-status",
        "originalLocations": [
-        "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/JobProperties-status"
+        "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/JobProperties-status"
        ]
       }
      },
@@ -3927,7 +3927,7 @@
        ],
        "name": "JobProperties-storageAuthenticationType",
        "originalLocations": [
-        "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/JobProperties-storageAuthenticationType"
+        "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/JobProperties-storageAuthenticationType"
        ]
       }
      },
@@ -4104,7 +4104,7 @@
      ],
      "name": "JobProperties",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/JobProperties"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/JobProperties"
      ]
     }
    },
@@ -4326,7 +4326,7 @@
        ],
        "name": "Module-connectionState",
        "originalLocations": [
-        "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/Module-connectionState"
+        "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/Module-connectionState"
        ]
       }
      },
@@ -4536,7 +4536,7 @@
      ],
      "name": "Module",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/Module"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/Module"
      ]
     }
    },
@@ -4648,7 +4648,7 @@
      ],
      "name": "ConfigurationQueriesTestInput",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/ConfigurationQueriesTestInput"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/ConfigurationQueriesTestInput"
      ]
     }
    },
@@ -4760,7 +4760,7 @@
      ],
      "name": "ConfigurationQueriesTestResponse",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/ConfigurationQueriesTestResponse"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/ConfigurationQueriesTestResponse"
      ]
     }
    },
@@ -4902,7 +4902,7 @@
      ],
      "name": "RegistryStatistics",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/RegistryStatistics"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/RegistryStatistics"
      ]
     }
    },
@@ -4968,7 +4968,7 @@
      ],
      "name": "ServiceStatistics",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/ServiceStatistics"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/ServiceStatistics"
      ]
     }
    },
@@ -5042,7 +5042,7 @@
        ],
        "name": "DeviceRegistryOperationError-errorCode",
        "originalLocations": [
-        "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/DeviceRegistryOperationError-errorCode"
+        "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/DeviceRegistryOperationError-errorCode"
        ]
       }
      },
@@ -6290,7 +6290,7 @@
      ],
      "name": "DeviceRegistryOperationError",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/DeviceRegistryOperationError"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/DeviceRegistryOperationError"
      ]
     }
    },
@@ -6364,7 +6364,7 @@
        ],
        "name": "DeviceRegistryOperationWarning-warningCode",
        "originalLocations": [
-        "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/DeviceRegistryOperationWarning-warningCode"
+        "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/DeviceRegistryOperationWarning-warningCode"
        ]
       }
      },
@@ -6463,7 +6463,7 @@
      ],
      "name": "DeviceRegistryOperationWarning",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/DeviceRegistryOperationWarning"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/DeviceRegistryOperationWarning"
      ]
     }
    },
@@ -6605,7 +6605,7 @@
      ],
      "name": "BulkRegistryOperationResult",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/BulkRegistryOperationResult"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/BulkRegistryOperationResult"
      ]
     }
    },
@@ -6671,7 +6671,7 @@
      ],
      "name": "QuerySpecification",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/QuerySpecification"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/QuerySpecification"
      ]
     }
    },
@@ -6811,7 +6811,7 @@
      ],
      "name": "PurgeMessageQueueResult",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/PurgeMessageQueueResult"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/PurgeMessageQueueResult"
      ]
     }
    },
@@ -6988,7 +6988,7 @@
      ],
      "name": "CloudToDeviceMethod",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/CloudToDeviceMethod"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/CloudToDeviceMethod"
      ]
     }
    },
@@ -7062,7 +7062,7 @@
        ],
        "name": "JobRequest-type",
        "originalLocations": [
-        "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/JobRequest-type"
+        "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/JobRequest-type"
        ]
       }
      },
@@ -7358,7 +7358,7 @@
      ],
      "name": "JobRequest",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/JobRequest"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/JobRequest"
      ]
     }
    },
@@ -7577,7 +7577,7 @@
      ],
      "name": "DeviceJobStatistics",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/DeviceJobStatistics"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/DeviceJobStatistics"
      ]
     }
    },
@@ -7840,7 +7840,7 @@
        ],
        "name": "JobResponse-type",
        "originalLocations": [
-        "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/JobResponse-type"
+        "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/JobResponse-type"
        ]
       }
      },
@@ -8032,7 +8032,7 @@
        ],
        "name": "JobResponse-status",
        "originalLocations": [
-        "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/JobResponse-status"
+        "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/JobResponse-status"
        ]
       }
      },
@@ -8231,7 +8231,7 @@
      ],
      "name": "JobResponse",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/JobResponse"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/JobResponse"
      ]
     }
    },
@@ -8268,7 +8268,7 @@
        ],
        "name": "QueryResult-type",
        "originalLocations": [
-        "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/QueryResult-type"
+        "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/QueryResult-type"
        ]
       }
      },
@@ -8448,7 +8448,7 @@
      ],
      "name": "QueryResult",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/QueryResult"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/QueryResult"
      ]
     }
    },
@@ -8552,7 +8552,7 @@
      ],
      "name": "CloudToDeviceMethodResult",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/schemas/CloudToDeviceMethodResult"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/schemas/CloudToDeviceMethodResult"
      ]
     }
    },
@@ -8591,7 +8591,7 @@
        ],
        "name": "paths·kqg1o9·devices-query·post·responses·200·headers·x_ms_item_type",
        "originalLocations": [
-        "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/headers/paths·kqg1o9·devices-query·post·responses·200·headers·x_ms_item_type"
+        "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/headers/paths·kqg1o9·devices-query·post·responses·200·headers·x_ms_item_type"
        ]
       }
      },
@@ -8642,7 +8642,7 @@
        ],
        "name": "paths·enkpwd·devices-query·post·responses·200·headers·x_ms_continuation",
        "originalLocations": [
-        "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/headers/paths·enkpwd·devices-query·post·responses·200·headers·x_ms_continuation"
+        "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/headers/paths·enkpwd·devices-query·post·responses·200·headers·x_ms_continuation"
        ]
       }
      },
@@ -8708,7 +8708,7 @@
        ],
        "name": "paths·1xm88z2·digitaltwins-id·get·responses·200·headers·etag",
        "originalLocations": [
-        "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/headers/paths·1xm88z2·digitaltwins-id·get·responses·200·headers·etag"
+        "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/headers/paths·1xm88z2·digitaltwins-id·get·responses·200·headers·etag"
        ]
       }
      },
@@ -8774,7 +8774,7 @@
        ],
        "name": "paths·pkf6q4·digitaltwins-id·patch·responses·202·headers·etag",
        "originalLocations": [
-        "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/headers/paths·pkf6q4·digitaltwins-id·patch·responses·202·headers·etag"
+        "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/headers/paths·pkf6q4·digitaltwins-id·patch·responses·202·headers·etag"
        ]
       }
      },
@@ -8825,7 +8825,7 @@
        ],
        "name": "paths·m9lek·digitaltwins-id·patch·responses·202·headers·location",
        "originalLocations": [
-        "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/headers/paths·m9lek·digitaltwins-id·patch·responses·202·headers·location"
+        "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/headers/paths·m9lek·digitaltwins-id·patch·responses·202·headers·location"
        ]
       }
      },
@@ -8891,7 +8891,7 @@
        ],
        "name": "paths·1cl9x8t·digitaltwins-id-commands-commandname·post·responses·200·headers·x_ms_command_statuscode",
        "originalLocations": [
-        "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/headers/paths·1cl9x8t·digitaltwins-id-commands-commandname·post·responses·200·headers·x_ms_command_statuscode"
+        "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/headers/paths·1cl9x8t·digitaltwins-id-commands-commandname·post·responses·200·headers·x_ms_command_statuscode"
        ]
       }
      },
@@ -8943,7 +8943,7 @@
        ],
        "name": "paths·1d8rdg·digitaltwins-id-commands-commandname·post·responses·200·headers·x_ms_request_id",
        "originalLocations": [
-        "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/headers/paths·1d8rdg·digitaltwins-id-commands-commandname·post·responses·200·headers·x_ms_request_id"
+        "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/headers/paths·1d8rdg·digitaltwins-id-commands-commandname·post·responses·200·headers·x_ms_request_id"
        ]
       }
      },
@@ -9009,7 +9009,7 @@
        ],
        "name": "paths·1r51bn8·digitaltwins-id-components-componentpath-commands-commandname·post·responses·200·headers·x_ms_command_statuscode",
        "originalLocations": [
-        "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/headers/paths·1r51bn8·digitaltwins-id-components-componentpath-commands-commandname·post·responses·200·headers·x_ms_command_statuscode"
+        "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/headers/paths·1r51bn8·digitaltwins-id-components-componentpath-commands-commandname·post·responses·200·headers·x_ms_command_statuscode"
        ]
       }
      },
@@ -9061,7 +9061,7 @@
        ],
        "name": "paths·1sdcdpi·digitaltwins-id-components-componentpath-commands-commandname·post·responses·200·headers·x_ms_request_id",
        "originalLocations": [
-        "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/headers/paths·1sdcdpi·digitaltwins-id-components-componentpath-commands-commandname·post·responses·200·headers·x_ms_request_id"
+        "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/headers/paths·1sdcdpi·digitaltwins-id-components-componentpath-commands-commandname·post·responses·200·headers·x_ms_request_id"
        ]
       }
      },
@@ -9130,7 +9130,7 @@
      ],
      "name": "paths·1f6vm7k·configurations-id·get·parameters·0",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1f6vm7k·configurations-id·get·parameters·0"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1f6vm7k·configurations-id·get·parameters·0"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -9182,7 +9182,7 @@
      ],
      "name": "paths·1k676il·configurations-id·put·parameters·0",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1k676il·configurations-id·put·parameters·0"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1k676il·configurations-id·put·parameters·0"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -9234,7 +9234,7 @@
      ],
      "name": "paths·19gmv8s·configurations-id·put·parameters·1",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·19gmv8s·configurations-id·put·parameters·1"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·19gmv8s·configurations-id·put·parameters·1"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -9286,7 +9286,7 @@
      ],
      "name": "paths·183833f·configurations-id·delete·parameters·0",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·183833f·configurations-id·delete·parameters·0"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·183833f·configurations-id·delete·parameters·0"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -9338,7 +9338,7 @@
      ],
      "name": "paths·qt3rbz·configurations-id·delete·parameters·1",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·qt3rbz·configurations-id·delete·parameters·1"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·qt3rbz·configurations-id·delete·parameters·1"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -9390,7 +9390,7 @@
      ],
      "name": "paths·14ibz5n·configurations·get·parameters·0",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·14ibz5n·configurations·get·parameters·0"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·14ibz5n·configurations·get·parameters·0"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -9443,7 +9443,7 @@
      ],
      "name": "paths·kx2abe·devices·get·parameters·0",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·kx2abe·devices·get·parameters·0"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·kx2abe·devices·get·parameters·0"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -9496,7 +9496,7 @@
      ],
      "name": "paths·1v5kb0t·devices-query·post·parameters·1",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1v5kb0t·devices-query·post·parameters·1"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1v5kb0t·devices-query·post·parameters·1"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -9548,7 +9548,7 @@
      ],
      "name": "paths·soykih·devices-query·post·parameters·2",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·soykih·devices-query·post·parameters·2"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·soykih·devices-query·post·parameters·2"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -9600,7 +9600,7 @@
      ],
      "name": "paths·ltuwg·devices-id·get·parameters·0",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·ltuwg·devices-id·get·parameters·0"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·ltuwg·devices-id·get·parameters·0"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -9652,7 +9652,7 @@
      ],
      "name": "paths·27a9pn·devices-id·put·parameters·0",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·27a9pn·devices-id·put·parameters·0"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·27a9pn·devices-id·put·parameters·0"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -9704,7 +9704,7 @@
      ],
      "name": "paths·qnkxvd·devices-id·put·parameters·1",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·qnkxvd·devices-id·put·parameters·1"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·qnkxvd·devices-id·put·parameters·1"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -9756,7 +9756,7 @@
      ],
      "name": "paths·4b3beg·devices-id·delete·parameters·0",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·4b3beg·devices-id·delete·parameters·0"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·4b3beg·devices-id·delete·parameters·0"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -9808,7 +9808,7 @@
      ],
      "name": "paths·da7hil·devices-id·delete·parameters·1",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·da7hil·devices-id·delete·parameters·1"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·da7hil·devices-id·delete·parameters·1"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -9860,7 +9860,7 @@
      ],
      "name": "paths·1hct3sq·devices-id-applyconfigurationcontent·post·parameters·0",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1hct3sq·devices-id-applyconfigurationcontent·post·parameters·0"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1hct3sq·devices-id-applyconfigurationcontent·post·parameters·0"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -9912,7 +9912,7 @@
      ],
      "name": "paths·fx5c4j·jobs-id·get·parameters·0",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·fx5c4j·jobs-id·get·parameters·0"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·fx5c4j·jobs-id·get·parameters·0"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -9964,7 +9964,7 @@
      ],
      "name": "paths·1fyq523·jobs-id·delete·parameters·0",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1fyq523·jobs-id·delete·parameters·0"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1fyq523·jobs-id·delete·parameters·0"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -10016,7 +10016,7 @@
      ],
      "name": "paths·1oa6hkm·devices-id-commands·delete·parameters·0",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1oa6hkm·devices-id-commands·delete·parameters·0"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1oa6hkm·devices-id-commands·delete·parameters·0"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -10068,7 +10068,7 @@
      ],
      "name": "paths·1dlolbt·twins-id·get·parameters·0",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1dlolbt·twins-id·get·parameters·0"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1dlolbt·twins-id·get·parameters·0"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -10120,7 +10120,7 @@
      ],
      "name": "paths·17v1reu·twins-id·put·parameters·0",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·17v1reu·twins-id·put·parameters·0"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·17v1reu·twins-id·put·parameters·0"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -10172,7 +10172,7 @@
      ],
      "name": "paths·1fr7tw8·twins-id·put·parameters·1",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1fr7tw8·twins-id·put·parameters·1"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1fr7tw8·twins-id·put·parameters·1"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -10224,7 +10224,7 @@
      ],
      "name": "paths·1fiuzan·twins-id·patch·parameters·0",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1fiuzan·twins-id·patch·parameters·0"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1fiuzan·twins-id·patch·parameters·0"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -10276,7 +10276,7 @@
      ],
      "name": "paths·751sbr·twins-id·patch·parameters·1",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·751sbr·twins-id·patch·parameters·1"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·751sbr·twins-id·patch·parameters·1"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -10328,7 +10328,7 @@
      ],
      "name": "paths·1f9d1z·twins-id-modules-mid·get·parameters·0",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1f9d1z·twins-id-modules-mid·get·parameters·0"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1f9d1z·twins-id-modules-mid·get·parameters·0"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -10380,7 +10380,7 @@
      ],
      "name": "paths·6lnxrp·twins-id-modules-mid·get·parameters·1",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·6lnxrp·twins-id-modules-mid·get·parameters·1"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·6lnxrp·twins-id-modules-mid·get·parameters·1"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -10432,7 +10432,7 @@
      ],
      "name": "paths·1i58txg·twins-id-modules-mid·put·parameters·0",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1i58txg·twins-id-modules-mid·put·parameters·0"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1i58txg·twins-id-modules-mid·put·parameters·0"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -10484,7 +10484,7 @@
      ],
      "name": "paths·1b37gfg·twins-id-modules-mid·put·parameters·1",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1b37gfg·twins-id-modules-mid·put·parameters·1"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1b37gfg·twins-id-modules-mid·put·parameters·1"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -10536,7 +10536,7 @@
      ],
      "name": "paths·1hfbczz·twins-id-modules-mid·put·parameters·2",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1hfbczz·twins-id-modules-mid·put·parameters·2"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1hfbczz·twins-id-modules-mid·put·parameters·2"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -10588,7 +10588,7 @@
      ],
      "name": "paths·1ej2yzp·twins-id-modules-mid·patch·parameters·0",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1ej2yzp·twins-id-modules-mid·patch·parameters·0"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1ej2yzp·twins-id-modules-mid·patch·parameters·0"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -10640,7 +10640,7 @@
      ],
      "name": "paths·lv0nd2·twins-id-modules-mid·patch·parameters·1",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·lv0nd2·twins-id-modules-mid·patch·parameters·1"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·lv0nd2·twins-id-modules-mid·patch·parameters·1"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -10692,7 +10692,7 @@
      ],
      "name": "paths·18wn7us·twins-id-modules-mid·patch·parameters·2",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·18wn7us·twins-id-modules-mid·patch·parameters·2"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·18wn7us·twins-id-modules-mid·patch·parameters·2"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -10744,7 +10744,7 @@
      ],
      "name": "paths·1tkjuz5·digitaltwins-id·get·parameters·0",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1tkjuz5·digitaltwins-id·get·parameters·0"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1tkjuz5·digitaltwins-id·get·parameters·0"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -10796,7 +10796,7 @@
      ],
      "name": "paths·f78rs6·digitaltwins-id·patch·parameters·0",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·f78rs6·digitaltwins-id·patch·parameters·0"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·f78rs6·digitaltwins-id·patch·parameters·0"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -10847,7 +10847,7 @@
      ],
      "name": "paths·1miyl44·digitaltwins-id·patch·parameters·1",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1miyl44·digitaltwins-id·patch·parameters·1"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1miyl44·digitaltwins-id·patch·parameters·1"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -10898,7 +10898,7 @@
      ],
      "name": "paths·1gucrlh·digitaltwins-id-commands-commandname·post·parameters·0",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1gucrlh·digitaltwins-id-commands-commandname·post·parameters·0"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1gucrlh·digitaltwins-id-commands-commandname·post·parameters·0"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -10949,7 +10949,7 @@
      ],
      "name": "paths·cuyncu·digitaltwins-id-commands-commandname·post·parameters·1",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·cuyncu·digitaltwins-id-commands-commandname·post·parameters·1"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·cuyncu·digitaltwins-id-commands-commandname·post·parameters·1"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -11001,7 +11001,7 @@
      ],
      "name": "paths·e18es3·digitaltwins-id-commands-commandname·post·parameters·3",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·e18es3·digitaltwins-id-commands-commandname·post·parameters·3"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·e18es3·digitaltwins-id-commands-commandname·post·parameters·3"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -11054,7 +11054,7 @@
      ],
      "name": "paths·1o105wg·digitaltwins-id-commands-commandname·post·parameters·4",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1o105wg·digitaltwins-id-commands-commandname·post·parameters·4"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1o105wg·digitaltwins-id-commands-commandname·post·parameters·4"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -11107,7 +11107,7 @@
      ],
      "name": "paths·14u8rw2·messages-servicebound-feedback-locktoken·delete·parameters·0",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·14u8rw2·messages-servicebound-feedback-locktoken·delete·parameters·0"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·14u8rw2·messages-servicebound-feedback-locktoken·delete·parameters·0"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -11159,7 +11159,7 @@
      ],
      "name": "paths·14nv0pv·messages-servicebound-feedback-locktoken-abandon·post·parameters·0",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·14nv0pv·messages-servicebound-feedback-locktoken-abandon·post·parameters·0"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·14nv0pv·messages-servicebound-feedback-locktoken-abandon·post·parameters·0"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -11211,7 +11211,7 @@
      ],
      "name": "paths·1g4jrai·jobs-v2-id·get·parameters·0",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1g4jrai·jobs-v2-id·get·parameters·0"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1g4jrai·jobs-v2-id·get·parameters·0"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -11263,7 +11263,7 @@
      ],
      "name": "paths·qmax6a·jobs-v2-id·put·parameters·0",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·qmax6a·jobs-v2-id·put·parameters·0"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·qmax6a·jobs-v2-id·put·parameters·0"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -11315,7 +11315,7 @@
      ],
      "name": "paths·stbexz·jobs-v2-id-cancel·post·parameters·0",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·stbexz·jobs-v2-id-cancel·post·parameters·0"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·stbexz·jobs-v2-id-cancel·post·parameters·0"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -11367,7 +11367,7 @@
      ],
      "name": "paths·2qtbq6·jobs-v2-query·get·parameters·0",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·2qtbq6·jobs-v2-query·get·parameters·0"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·2qtbq6·jobs-v2-query·get·parameters·0"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -11419,7 +11419,7 @@
      ],
      "name": "paths·1oi58f9·jobs-v2-query·get·parameters·1",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1oi58f9·jobs-v2-query·get·parameters·1"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1oi58f9·jobs-v2-query·get·parameters·1"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -11471,7 +11471,7 @@
      ],
      "name": "paths·18kx03d·devices-id-modules·get·parameters·0",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·18kx03d·devices-id-modules·get·parameters·0"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·18kx03d·devices-id-modules·get·parameters·0"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -11523,7 +11523,7 @@
      ],
      "name": "paths·1peo8bu·devices-id-modules-mid·get·parameters·0",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1peo8bu·devices-id-modules-mid·get·parameters·0"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1peo8bu·devices-id-modules-mid·get·parameters·0"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -11575,7 +11575,7 @@
      ],
      "name": "paths·163hzg7·devices-id-modules-mid·get·parameters·1",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·163hzg7·devices-id-modules-mid·get·parameters·1"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·163hzg7·devices-id-modules-mid·get·parameters·1"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -11627,7 +11627,7 @@
      ],
      "name": "paths·gx0aqq·devices-id-modules-mid·put·parameters·0",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·gx0aqq·devices-id-modules-mid·put·parameters·0"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·gx0aqq·devices-id-modules-mid·put·parameters·0"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -11679,7 +11679,7 @@
      ],
      "name": "paths·ja3ow3·devices-id-modules-mid·put·parameters·1",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·ja3ow3·devices-id-modules-mid·put·parameters·1"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·ja3ow3·devices-id-modules-mid·put·parameters·1"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -11731,7 +11731,7 @@
      ],
      "name": "paths·ft3lzw·devices-id-modules-mid·put·parameters·2",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·ft3lzw·devices-id-modules-mid·put·parameters·2"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·ft3lzw·devices-id-modules-mid·put·parameters·2"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -11783,7 +11783,7 @@
      ],
      "name": "paths·8a63di·devices-id-modules-mid·delete·parameters·0",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·8a63di·devices-id-modules-mid·delete·parameters·0"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·8a63di·devices-id-modules-mid·delete·parameters·0"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -11835,7 +11835,7 @@
      ],
      "name": "paths·ki7kpw·devices-id-modules-mid·delete·parameters·1",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·ki7kpw·devices-id-modules-mid·delete·parameters·1"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·ki7kpw·devices-id-modules-mid·delete·parameters·1"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -11887,7 +11887,7 @@
      ],
      "name": "paths·197wydm·devices-id-modules-mid·delete·parameters·2",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·197wydm·devices-id-modules-mid·delete·parameters·2"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·197wydm·devices-id-modules-mid·delete·parameters·2"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -11938,7 +11938,7 @@
      ],
      "name": "paths·1vj9ah2·digitaltwins-id-components-componentpath-commands-commandname·post·parameters·0",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1vj9ah2·digitaltwins-id-components-componentpath-commands-commandname·post·parameters·0"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1vj9ah2·digitaltwins-id-components-componentpath-commands-commandname·post·parameters·0"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -11989,7 +11989,7 @@
      ],
      "name": "paths·sv78xn·digitaltwins-id-components-componentpath-commands-commandname·post·parameters·1",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·sv78xn·digitaltwins-id-components-componentpath-commands-commandname·post·parameters·1"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·sv78xn·digitaltwins-id-components-componentpath-commands-commandname·post·parameters·1"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -12040,7 +12040,7 @@
      ],
      "name": "paths·3haext·digitaltwins-id-components-componentpath-commands-commandname·post·parameters·2",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·3haext·digitaltwins-id-components-componentpath-commands-commandname·post·parameters·2"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·3haext·digitaltwins-id-components-componentpath-commands-commandname·post·parameters·2"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -12092,7 +12092,7 @@
      ],
      "name": "paths·ncf3ff·digitaltwins-id-components-componentpath-commands-commandname·post·parameters·4",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·ncf3ff·digitaltwins-id-components-componentpath-commands-commandname·post·parameters·4"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·ncf3ff·digitaltwins-id-components-componentpath-commands-commandname·post·parameters·4"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -12145,7 +12145,7 @@
      ],
      "name": "paths·1lu4jxs·digitaltwins-id-components-componentpath-commands-commandname·post·parameters·5",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1lu4jxs·digitaltwins-id-components-componentpath-commands-commandname·post·parameters·5"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1lu4jxs·digitaltwins-id-components-componentpath-commands-commandname·post·parameters·5"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -12198,7 +12198,7 @@
      ],
      "name": "paths·6tjfnl·twins-deviceid-methods·post·parameters·0",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·6tjfnl·twins-deviceid-methods·post·parameters·0"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·6tjfnl·twins-deviceid-methods·post·parameters·0"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -12250,7 +12250,7 @@
      ],
      "name": "paths·u6681z·twins-deviceid-modules-moduleid-methods·post·parameters·0",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·u6681z·twins-deviceid-modules-moduleid-methods·post·parameters·0"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·u6681z·twins-deviceid-modules-moduleid-methods·post·parameters·0"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -12302,7 +12302,7 @@
      ],
      "name": "paths·zefs5y·twins-deviceid-modules-moduleid-methods·post·parameters·1",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·zefs5y·twins-deviceid-modules-moduleid-methods·post·parameters·1"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·zefs5y·twins-deviceid-modules-moduleid-methods·post·parameters·1"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -12355,7 +12355,7 @@
      ],
      "name": "api-version",
      "originalLocations": [
-      "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/api-version"
+      "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/api-version"
      ]
     }
    },
@@ -12414,7 +12414,7 @@
          ],
          "name": "paths·1f6vm7k·configurations-id·get·parameters·0",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1f6vm7k·configurations-id·get·parameters·0"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1f6vm7k·configurations-id·get·parameters·0"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -12506,7 +12506,7 @@
          ],
          "name": "paths·1vluu4l·configurations-id·get·responses·200",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·1vluu4l·configurations-id·get·responses·200"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·1vluu4l·configurations-id·get·responses·200"
          ]
         }
        },
@@ -12569,7 +12569,7 @@
          ],
          "name": "paths·1k676il·configurations-id·put·parameters·0",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1k676il·configurations-id·put·parameters·0"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1k676il·configurations-id·put·parameters·0"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -12618,7 +12618,7 @@
          ],
          "name": "paths·1j5ydn7·configurations-id·put·requestbody",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/requestBodies/paths·1j5ydn7·configurations-id·put·requestbody"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/requestBodies/paths·1j5ydn7·configurations-id·put·requestbody"
          ]
         },
         "x-ms-requestBody-name": "configuration"
@@ -12662,7 +12662,7 @@
          ],
          "name": "paths·19gmv8s·configurations-id·put·parameters·1",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·19gmv8s·configurations-id·put·parameters·1"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·19gmv8s·configurations-id·put·parameters·1"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -12754,7 +12754,7 @@
          ],
          "name": "paths·1iipulf·configurations-id·put·responses·200",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·1iipulf·configurations-id·put·responses·200"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·1iipulf·configurations-id·put·responses·200"
          ]
         }
        },
@@ -12776,7 +12776,7 @@
          ],
          "name": "paths·zx4bh8·configurations-id·put·responses·201",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·zx4bh8·configurations-id·put·responses·201"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·zx4bh8·configurations-id·put·responses·201"
          ]
         }
        },
@@ -12840,7 +12840,7 @@
          ],
          "name": "paths·183833f·configurations-id·delete·parameters·0",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·183833f·configurations-id·delete·parameters·0"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·183833f·configurations-id·delete·parameters·0"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -12892,7 +12892,7 @@
          ],
          "name": "paths·qt3rbz·configurations-id·delete·parameters·1",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·qt3rbz·configurations-id·delete·parameters·1"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·qt3rbz·configurations-id·delete·parameters·1"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -12981,7 +12981,7 @@
          ],
          "name": "paths·1pz93zo·configurations-id·delete·responses·204",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·1pz93zo·configurations-id·delete·responses·204"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·1pz93zo·configurations-id·delete·responses·204"
          ]
         }
        },
@@ -13041,7 +13041,7 @@
          ],
          "name": "paths·14ibz5n·configurations·get·parameters·0",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·14ibz5n·configurations·get·parameters·0"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·14ibz5n·configurations·get·parameters·0"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -13143,7 +13143,7 @@
          ],
          "name": "paths·5azhga·configurations·get·responses·200",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·5azhga·configurations·get·responses·200"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·5azhga·configurations·get·responses·200"
          ]
         }
        },
@@ -13203,7 +13203,7 @@
          ],
          "name": "paths·11d02wp·configurations-testqueries·post·requestbody",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/requestBodies/paths·11d02wp·configurations-testqueries·post·requestbody"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/requestBodies/paths·11d02wp·configurations-testqueries·post·requestbody"
          ]
         },
         "x-ms-requestBody-name": "input"
@@ -13287,7 +13287,7 @@
          ],
          "name": "paths·11r0n3i·configurations-testqueries·post·responses·200",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·11r0n3i·configurations-testqueries·post·responses·200"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·11r0n3i·configurations-testqueries·post·responses·200"
          ]
         }
        },
@@ -13351,7 +13351,7 @@
          ],
          "name": "paths·1hct3sq·devices-id-applyconfigurationcontent·post·parameters·0",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1hct3sq·devices-id-applyconfigurationcontent·post·parameters·0"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1hct3sq·devices-id-applyconfigurationcontent·post·parameters·0"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -13400,7 +13400,7 @@
          ],
          "name": "paths·150bkqc·devices-id-applyconfigurationcontent·post·requestbody",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/requestBodies/paths·150bkqc·devices-id-applyconfigurationcontent·post·requestbody"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/requestBodies/paths·150bkqc·devices-id-applyconfigurationcontent·post·requestbody"
          ]
         },
         "x-ms-requestBody-name": "content"
@@ -13481,7 +13481,7 @@
          ],
          "name": "paths·xj4v2r·devices-id-applyconfigurationcontent·post·responses·204",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·xj4v2r·devices-id-applyconfigurationcontent·post·responses·204"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·xj4v2r·devices-id-applyconfigurationcontent·post·responses·204"
          ]
         }
        },
@@ -13597,7 +13597,7 @@
          ],
          "name": "paths·joru9t·statistics-devices·get·responses·200",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·joru9t·statistics-devices·get·responses·200"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·joru9t·statistics-devices·get·responses·200"
          ]
         }
        },
@@ -13700,7 +13700,7 @@
          ],
          "name": "paths·kh4oh·statistics-service·get·responses·200",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·kh4oh·statistics-service·get·responses·200"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·kh4oh·statistics-service·get·responses·200"
          ]
         }
        },
@@ -13778,7 +13778,7 @@
          ],
          "name": "paths·kx2abe·devices·get·parameters·0",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·kx2abe·devices·get·parameters·0"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·kx2abe·devices·get·parameters·0"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -13880,7 +13880,7 @@
          ],
          "name": "paths·1rtoakf·devices·get·responses·200",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·1rtoakf·devices·get·responses·200"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·1rtoakf·devices·get·responses·200"
          ]
         }
        },
@@ -13943,7 +13943,7 @@
          ],
          "name": "paths·ltuwg·devices-id·get·parameters·0",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·ltuwg·devices-id·get·parameters·0"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·ltuwg·devices-id·get·parameters·0"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -14035,7 +14035,7 @@
          ],
          "name": "paths·18lz330·devices-id·get·responses·200",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·18lz330·devices-id·get·responses·200"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·18lz330·devices-id·get·responses·200"
          ]
         }
        },
@@ -14098,7 +14098,7 @@
          ],
          "name": "paths·27a9pn·devices-id·put·parameters·0",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·27a9pn·devices-id·put·parameters·0"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·27a9pn·devices-id·put·parameters·0"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -14147,7 +14147,7 @@
          ],
          "name": "paths·1uchdf3·devices-id·put·requestbody",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/requestBodies/paths·1uchdf3·devices-id·put·requestbody"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/requestBodies/paths·1uchdf3·devices-id·put·requestbody"
          ]
         },
         "x-ms-requestBody-name": "device"
@@ -14191,7 +14191,7 @@
          ],
          "name": "paths·qnkxvd·devices-id·put·parameters·1",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·qnkxvd·devices-id·put·parameters·1"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·qnkxvd·devices-id·put·parameters·1"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -14283,7 +14283,7 @@
          ],
          "name": "paths·12qxwgi·devices-id·put·responses·200",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·12qxwgi·devices-id·put·responses·200"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·12qxwgi·devices-id·put·responses·200"
          ]
         }
        },
@@ -14347,7 +14347,7 @@
          ],
          "name": "paths·4b3beg·devices-id·delete·parameters·0",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·4b3beg·devices-id·delete·parameters·0"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·4b3beg·devices-id·delete·parameters·0"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -14399,7 +14399,7 @@
          ],
          "name": "paths·da7hil·devices-id·delete·parameters·1",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·da7hil·devices-id·delete·parameters·1"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·da7hil·devices-id·delete·parameters·1"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -14488,7 +14488,7 @@
          ],
          "name": "paths·71q6jb·devices-id·delete·responses·204",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·71q6jb·devices-id·delete·responses·204"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·71q6jb·devices-id·delete·responses·204"
          ]
         }
        },
@@ -14548,7 +14548,7 @@
          ],
          "name": "paths·1dlolbt·twins-id·get·parameters·0",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1dlolbt·twins-id·get·parameters·0"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1dlolbt·twins-id·get·parameters·0"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -14640,7 +14640,7 @@
          ],
          "name": "paths·61oy30·twins-id·get·responses·200",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·61oy30·twins-id·get·responses·200"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·61oy30·twins-id·get·responses·200"
          ]
         }
        },
@@ -14703,7 +14703,7 @@
          ],
          "name": "paths·17v1reu·twins-id·put·parameters·0",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·17v1reu·twins-id·put·parameters·0"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·17v1reu·twins-id·put·parameters·0"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -14752,7 +14752,7 @@
          ],
          "name": "paths·13k3thf·twins-id·put·requestbody",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/requestBodies/paths·13k3thf·twins-id·put·requestbody"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/requestBodies/paths·13k3thf·twins-id·put·requestbody"
          ]
         },
         "x-ms-requestBody-name": "deviceTwinInfo"
@@ -14796,7 +14796,7 @@
          ],
          "name": "paths·1fr7tw8·twins-id·put·parameters·1",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1fr7tw8·twins-id·put·parameters·1"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1fr7tw8·twins-id·put·parameters·1"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -14888,7 +14888,7 @@
          ],
          "name": "paths·i917p9·twins-id·put·responses·200",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·i917p9·twins-id·put·responses·200"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·i917p9·twins-id·put·responses·200"
          ]
         }
        },
@@ -14952,7 +14952,7 @@
          ],
          "name": "paths·1fiuzan·twins-id·patch·parameters·0",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1fiuzan·twins-id·patch·parameters·0"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1fiuzan·twins-id·patch·parameters·0"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -15001,7 +15001,7 @@
          ],
          "name": "paths·1yunajk·twins-id·patch·requestbody",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/requestBodies/paths·1yunajk·twins-id·patch·requestbody"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/requestBodies/paths·1yunajk·twins-id·patch·requestbody"
          ]
         },
         "x-ms-requestBody-name": "deviceTwinInfo"
@@ -15045,7 +15045,7 @@
          ],
          "name": "paths·751sbr·twins-id·patch·parameters·1",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·751sbr·twins-id·patch·parameters·1"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·751sbr·twins-id·patch·parameters·1"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -15137,7 +15137,7 @@
          ],
          "name": "paths·8ji7fl·twins-id·patch·responses·200",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·8ji7fl·twins-id·patch·responses·200"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·8ji7fl·twins-id·patch·responses·200"
          ]
         }
        },
@@ -15201,7 +15201,7 @@
          ],
          "name": "paths·6tjfnl·twins-deviceid-methods·post·parameters·0",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·6tjfnl·twins-deviceid-methods·post·parameters·0"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·6tjfnl·twins-deviceid-methods·post·parameters·0"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -15250,7 +15250,7 @@
          ],
          "name": "paths·1h96ka1·twins-deviceid-methods·post·requestbody",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/requestBodies/paths·1h96ka1·twins-deviceid-methods·post·requestbody"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/requestBodies/paths·1h96ka1·twins-deviceid-methods·post·requestbody"
          ]
         },
         "x-ms-requestBody-name": "directMethodRequest"
@@ -15334,7 +15334,7 @@
          ],
          "name": "paths·11pld09·twins-deviceid-methods·post·responses·200",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·11pld09·twins-deviceid-methods·post·responses·200"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·11pld09·twins-deviceid-methods·post·responses·200"
          ]
         }
        },
@@ -15410,7 +15410,7 @@
          ],
          "name": "paths·sgkdoy·devices·post·requestbody",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/requestBodies/paths·sgkdoy·devices·post·requestbody"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/requestBodies/paths·sgkdoy·devices·post·requestbody"
          ]
         },
         "x-ms-requestBody-name": "devices"
@@ -15503,7 +15503,7 @@
          ],
          "name": "paths·1lbamn0·devices·post·responses·200",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·1lbamn0·devices·post·responses·200"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·1lbamn0·devices·post·responses·200"
          ]
         }
        },
@@ -15525,7 +15525,7 @@
          ],
          "name": "paths·116shop·devices·post·responses·400",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·116shop·devices·post·responses·400"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·116shop·devices·post·responses·400"
          ]
         }
        },
@@ -15601,7 +15601,7 @@
          ],
          "name": "paths·1g8tzww·devices-query·post·requestbody",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/requestBodies/paths·1g8tzww·devices-query·post·requestbody"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/requestBodies/paths·1g8tzww·devices-query·post·requestbody"
          ]
         },
         "x-ms-requestBody-name": "querySpecification"
@@ -15680,7 +15680,7 @@
          ],
          "name": "paths·1v5kb0t·devices-query·post·parameters·1",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1v5kb0t·devices-query·post·parameters·1"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1v5kb0t·devices-query·post·parameters·1"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -15732,7 +15732,7 @@
          ],
          "name": "paths·soykih·devices-query·post·parameters·2",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·soykih·devices-query·post·parameters·2"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·soykih·devices-query·post·parameters·2"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -15801,7 +15801,7 @@
          ],
          "name": "paths·3nwgqr·devices-query·post·responses·200",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·3nwgqr·devices-query·post·responses·200"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·3nwgqr·devices-query·post·responses·200"
          ]
         }
        },
@@ -15880,7 +15880,7 @@
          ],
          "name": "paths·e7usbk·jobs-create·post·requestbody",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/requestBodies/paths·e7usbk·jobs-create·post·requestbody"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/requestBodies/paths·e7usbk·jobs-create·post·requestbody"
          ]
         },
         "x-ms-requestBody-name": "jobProperties"
@@ -15964,7 +15964,7 @@
          ],
          "name": "paths·900275·jobs-create·post·responses·200",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·900275·jobs-create·post·responses·200"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·900275·jobs-create·post·responses·200"
          ]
         }
        },
@@ -16077,7 +16077,7 @@
          ],
          "name": "paths·jeqbho·jobs·get·responses·200",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·jeqbho·jobs·get·responses·200"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·jeqbho·jobs·get·responses·200"
          ]
         }
        },
@@ -16140,7 +16140,7 @@
          ],
          "name": "paths·fx5c4j·jobs-id·get·parameters·0",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·fx5c4j·jobs-id·get·parameters·0"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·fx5c4j·jobs-id·get·parameters·0"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -16232,7 +16232,7 @@
          ],
          "name": "paths·1cgzvz2·jobs-id·get·responses·200",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·1cgzvz2·jobs-id·get·responses·200"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·1cgzvz2·jobs-id·get·responses·200"
          ]
         }
        },
@@ -16295,7 +16295,7 @@
          ],
          "name": "paths·1fyq523·jobs-id·delete·parameters·0",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1fyq523·jobs-id·delete·parameters·0"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1fyq523·jobs-id·delete·parameters·0"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -16395,7 +16395,7 @@
          ],
          "name": "paths·1mvycp0·jobs-id·delete·responses·200",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·1mvycp0·jobs-id·delete·responses·200"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·1mvycp0·jobs-id·delete·responses·200"
          ]
         }
        },
@@ -16414,7 +16414,7 @@
          ],
          "name": "paths·1prh94r·jobs-id·delete·responses·204",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·1prh94r·jobs-id·delete·responses·204"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·1prh94r·jobs-id·delete·responses·204"
          ]
         }
        },
@@ -16477,7 +16477,7 @@
          ],
          "name": "paths·1g4jrai·jobs-v2-id·get·parameters·0",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1g4jrai·jobs-v2-id·get·parameters·0"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1g4jrai·jobs-v2-id·get·parameters·0"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -16569,7 +16569,7 @@
          ],
          "name": "paths·19vmbpd·jobs-v2-id·get·responses·200",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·19vmbpd·jobs-v2-id·get·responses·200"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·19vmbpd·jobs-v2-id·get·responses·200"
          ]
         }
        },
@@ -16632,7 +16632,7 @@
          ],
          "name": "paths·qmax6a·jobs-v2-id·put·parameters·0",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·qmax6a·jobs-v2-id·put·parameters·0"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·qmax6a·jobs-v2-id·put·parameters·0"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -16681,7 +16681,7 @@
          ],
          "name": "paths·il46j·jobs-v2-id·put·requestbody",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/requestBodies/paths·il46j·jobs-v2-id·put·requestbody"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/requestBodies/paths·il46j·jobs-v2-id·put·requestbody"
          ]
         },
         "x-ms-requestBody-name": "jobRequest"
@@ -16765,7 +16765,7 @@
          ],
          "name": "paths·nwgipd·jobs-v2-id·put·responses·200",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·nwgipd·jobs-v2-id·put·responses·200"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·nwgipd·jobs-v2-id·put·responses·200"
          ]
         }
        },
@@ -16829,7 +16829,7 @@
          ],
          "name": "paths·stbexz·jobs-v2-id-cancel·post·parameters·0",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·stbexz·jobs-v2-id-cancel·post·parameters·0"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·stbexz·jobs-v2-id-cancel·post·parameters·0"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -16921,7 +16921,7 @@
          ],
          "name": "paths·17huwz1·jobs-v2-id-cancel·post·responses·200",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·17huwz1·jobs-v2-id-cancel·post·responses·200"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·17huwz1·jobs-v2-id-cancel·post·responses·200"
          ]
         }
        },
@@ -16984,7 +16984,7 @@
          ],
          "name": "paths·2qtbq6·jobs-v2-query·get·parameters·0",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·2qtbq6·jobs-v2-query·get·parameters·0"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·2qtbq6·jobs-v2-query·get·parameters·0"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -17036,7 +17036,7 @@
          ],
          "name": "paths·1oi58f9·jobs-v2-query·get·parameters·1",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1oi58f9·jobs-v2-query·get·parameters·1"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1oi58f9·jobs-v2-query·get·parameters·1"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -17128,7 +17128,7 @@
          ],
          "name": "paths·1q25bga·jobs-v2-query·get·responses·200",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·1q25bga·jobs-v2-query·get·responses·200"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·1q25bga·jobs-v2-query·get·responses·200"
          ]
         }
        },
@@ -17206,7 +17206,7 @@
          ],
          "name": "paths·1oa6hkm·devices-id-commands·delete·parameters·0",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1oa6hkm·devices-id-commands·delete·parameters·0"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1oa6hkm·devices-id-commands·delete·parameters·0"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -17298,7 +17298,7 @@
          ],
          "name": "paths·1p53qff·devices-id-commands·delete·responses·200",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·1p53qff·devices-id-commands·delete·responses·200"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·1p53qff·devices-id-commands·delete·responses·200"
          ]
         }
        },
@@ -17398,7 +17398,7 @@
          ],
          "name": "paths·pnqf29·messages-servicebound-feedback·get·responses·200",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·pnqf29·messages-servicebound-feedback·get·responses·200"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·pnqf29·messages-servicebound-feedback·get·responses·200"
          ]
         }
        },
@@ -17417,7 +17417,7 @@
          ],
          "name": "paths·1i6ki96·messages-servicebound-feedback·get·responses·204",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·1i6ki96·messages-servicebound-feedback·get·responses·204"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·1i6ki96·messages-servicebound-feedback·get·responses·204"
          ]
         }
        },
@@ -17477,7 +17477,7 @@
          ],
          "name": "paths·14u8rw2·messages-servicebound-feedback-locktoken·delete·parameters·0",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·14u8rw2·messages-servicebound-feedback-locktoken·delete·parameters·0"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·14u8rw2·messages-servicebound-feedback-locktoken·delete·parameters·0"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -17566,7 +17566,7 @@
          ],
          "name": "paths·gf5z5f·messages-servicebound-feedback-locktoken·delete·responses·204",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·gf5z5f·messages-servicebound-feedback-locktoken·delete·responses·204"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·gf5z5f·messages-servicebound-feedback-locktoken·delete·responses·204"
          ]
         }
        },
@@ -17626,7 +17626,7 @@
          ],
          "name": "paths·14nv0pv·messages-servicebound-feedback-locktoken-abandon·post·parameters·0",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·14nv0pv·messages-servicebound-feedback-locktoken-abandon·post·parameters·0"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·14nv0pv·messages-servicebound-feedback-locktoken-abandon·post·parameters·0"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -17715,7 +17715,7 @@
          ],
          "name": "paths·11gfh9d·messages-servicebound-feedback-locktoken-abandon·post·responses·204",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·11gfh9d·messages-servicebound-feedback-locktoken-abandon·post·responses·204"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·11gfh9d·messages-servicebound-feedback-locktoken-abandon·post·responses·204"
          ]
         }
        },
@@ -17790,7 +17790,7 @@
          ],
          "name": "paths·1f9d1z·twins-id-modules-mid·get·parameters·0",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1f9d1z·twins-id-modules-mid·get·parameters·0"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1f9d1z·twins-id-modules-mid·get·parameters·0"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -17842,7 +17842,7 @@
          ],
          "name": "paths·6lnxrp·twins-id-modules-mid·get·parameters·1",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·6lnxrp·twins-id-modules-mid·get·parameters·1"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·6lnxrp·twins-id-modules-mid·get·parameters·1"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -17934,7 +17934,7 @@
          ],
          "name": "paths·bjw530·twins-id-modules-mid·get·responses·200",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·bjw530·twins-id-modules-mid·get·responses·200"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·bjw530·twins-id-modules-mid·get·responses·200"
          ]
         }
        },
@@ -17997,7 +17997,7 @@
          ],
          "name": "paths·1i58txg·twins-id-modules-mid·put·parameters·0",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1i58txg·twins-id-modules-mid·put·parameters·0"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1i58txg·twins-id-modules-mid·put·parameters·0"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -18049,7 +18049,7 @@
          ],
          "name": "paths·1b37gfg·twins-id-modules-mid·put·parameters·1",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1b37gfg·twins-id-modules-mid·put·parameters·1"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1b37gfg·twins-id-modules-mid·put·parameters·1"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -18098,7 +18098,7 @@
          ],
          "name": "paths·zj682t·twins-id-modules-mid·put·requestbody",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/requestBodies/paths·zj682t·twins-id-modules-mid·put·requestbody"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/requestBodies/paths·zj682t·twins-id-modules-mid·put·requestbody"
          ]
         },
         "x-ms-requestBody-name": "deviceTwinInfo"
@@ -18142,7 +18142,7 @@
          ],
          "name": "paths·1hfbczz·twins-id-modules-mid·put·parameters·2",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1hfbczz·twins-id-modules-mid·put·parameters·2"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1hfbczz·twins-id-modules-mid·put·parameters·2"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -18234,7 +18234,7 @@
          ],
          "name": "paths·1pkn6bk·twins-id-modules-mid·put·responses·200",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·1pkn6bk·twins-id-modules-mid·put·responses·200"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·1pkn6bk·twins-id-modules-mid·put·responses·200"
          ]
         }
        },
@@ -18298,7 +18298,7 @@
          ],
          "name": "paths·1ej2yzp·twins-id-modules-mid·patch·parameters·0",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1ej2yzp·twins-id-modules-mid·patch·parameters·0"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1ej2yzp·twins-id-modules-mid·patch·parameters·0"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -18350,7 +18350,7 @@
          ],
          "name": "paths·lv0nd2·twins-id-modules-mid·patch·parameters·1",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·lv0nd2·twins-id-modules-mid·patch·parameters·1"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·lv0nd2·twins-id-modules-mid·patch·parameters·1"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -18399,7 +18399,7 @@
          ],
          "name": "paths·1t3pn5k·twins-id-modules-mid·patch·requestbody",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/requestBodies/paths·1t3pn5k·twins-id-modules-mid·patch·requestbody"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/requestBodies/paths·1t3pn5k·twins-id-modules-mid·patch·requestbody"
          ]
         },
         "x-ms-requestBody-name": "deviceTwinInfo"
@@ -18443,7 +18443,7 @@
          ],
          "name": "paths·18wn7us·twins-id-modules-mid·patch·parameters·2",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·18wn7us·twins-id-modules-mid·patch·parameters·2"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·18wn7us·twins-id-modules-mid·patch·parameters·2"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -18535,7 +18535,7 @@
          ],
          "name": "paths·1c2t29y·twins-id-modules-mid·patch·responses·200",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·1c2t29y·twins-id-modules-mid·patch·responses·200"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·1c2t29y·twins-id-modules-mid·patch·responses·200"
          ]
         }
        },
@@ -18599,7 +18599,7 @@
          ],
          "name": "paths·18kx03d·devices-id-modules·get·parameters·0",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·18kx03d·devices-id-modules·get·parameters·0"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·18kx03d·devices-id-modules·get·parameters·0"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -18700,7 +18700,7 @@
          ],
          "name": "paths·i7fl26·devices-id-modules·get·responses·200",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·i7fl26·devices-id-modules·get·responses·200"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·i7fl26·devices-id-modules·get·responses·200"
          ]
         }
        },
@@ -18763,7 +18763,7 @@
          ],
          "name": "paths·1peo8bu·devices-id-modules-mid·get·parameters·0",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1peo8bu·devices-id-modules-mid·get·parameters·0"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1peo8bu·devices-id-modules-mid·get·parameters·0"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -18815,7 +18815,7 @@
          ],
          "name": "paths·163hzg7·devices-id-modules-mid·get·parameters·1",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·163hzg7·devices-id-modules-mid·get·parameters·1"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·163hzg7·devices-id-modules-mid·get·parameters·1"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -18907,7 +18907,7 @@
          ],
          "name": "paths·90vdxq·devices-id-modules-mid·get·responses·200",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·90vdxq·devices-id-modules-mid·get·responses·200"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·90vdxq·devices-id-modules-mid·get·responses·200"
          ]
         }
        },
@@ -18970,7 +18970,7 @@
          ],
          "name": "paths·gx0aqq·devices-id-modules-mid·put·parameters·0",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·gx0aqq·devices-id-modules-mid·put·parameters·0"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·gx0aqq·devices-id-modules-mid·put·parameters·0"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -19022,7 +19022,7 @@
          ],
          "name": "paths·ja3ow3·devices-id-modules-mid·put·parameters·1",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·ja3ow3·devices-id-modules-mid·put·parameters·1"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·ja3ow3·devices-id-modules-mid·put·parameters·1"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -19071,7 +19071,7 @@
          ],
          "name": "paths·apq5ej·devices-id-modules-mid·put·requestbody",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/requestBodies/paths·apq5ej·devices-id-modules-mid·put·requestbody"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/requestBodies/paths·apq5ej·devices-id-modules-mid·put·requestbody"
          ]
         },
         "x-ms-requestBody-name": "module"
@@ -19115,7 +19115,7 @@
          ],
          "name": "paths·ft3lzw·devices-id-modules-mid·put·parameters·2",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·ft3lzw·devices-id-modules-mid·put·parameters·2"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·ft3lzw·devices-id-modules-mid·put·parameters·2"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -19207,7 +19207,7 @@
          ],
          "name": "paths·6h3dq6·devices-id-modules-mid·put·responses·200",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·6h3dq6·devices-id-modules-mid·put·responses·200"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·6h3dq6·devices-id-modules-mid·put·responses·200"
          ]
         }
        },
@@ -19229,7 +19229,7 @@
          ],
          "name": "paths·17oj26z·devices-id-modules-mid·put·responses·201",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·17oj26z·devices-id-modules-mid·put·responses·201"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·17oj26z·devices-id-modules-mid·put·responses·201"
          ]
         }
        },
@@ -19293,7 +19293,7 @@
          ],
          "name": "paths·8a63di·devices-id-modules-mid·delete·parameters·0",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·8a63di·devices-id-modules-mid·delete·parameters·0"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·8a63di·devices-id-modules-mid·delete·parameters·0"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -19345,7 +19345,7 @@
          ],
          "name": "paths·ki7kpw·devices-id-modules-mid·delete·parameters·1",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·ki7kpw·devices-id-modules-mid·delete·parameters·1"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·ki7kpw·devices-id-modules-mid·delete·parameters·1"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -19397,7 +19397,7 @@
          ],
          "name": "paths·197wydm·devices-id-modules-mid·delete·parameters·2",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·197wydm·devices-id-modules-mid·delete·parameters·2"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·197wydm·devices-id-modules-mid·delete·parameters·2"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -19486,7 +19486,7 @@
          ],
          "name": "paths·1ej4ar0·devices-id-modules-mid·delete·responses·204",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·1ej4ar0·devices-id-modules-mid·delete·responses·204"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·1ej4ar0·devices-id-modules-mid·delete·responses·204"
          ]
         }
        },
@@ -19546,7 +19546,7 @@
          ],
          "name": "paths·u6681z·twins-deviceid-modules-moduleid-methods·post·parameters·0",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·u6681z·twins-deviceid-modules-moduleid-methods·post·parameters·0"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·u6681z·twins-deviceid-modules-moduleid-methods·post·parameters·0"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -19598,7 +19598,7 @@
          ],
          "name": "paths·zefs5y·twins-deviceid-modules-moduleid-methods·post·parameters·1",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·zefs5y·twins-deviceid-modules-moduleid-methods·post·parameters·1"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·zefs5y·twins-deviceid-modules-moduleid-methods·post·parameters·1"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -19647,7 +19647,7 @@
          ],
          "name": "paths·4rkh77·twins-deviceid-modules-moduleid-methods·post·requestbody",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/requestBodies/paths·4rkh77·twins-deviceid-modules-moduleid-methods·post·requestbody"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/requestBodies/paths·4rkh77·twins-deviceid-modules-moduleid-methods·post·requestbody"
          ]
         },
         "x-ms-requestBody-name": "directMethodRequest"
@@ -19731,7 +19731,7 @@
          ],
          "name": "paths·1a1vv2b·twins-deviceid-modules-moduleid-methods·post·responses·200",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·1a1vv2b·twins-deviceid-modules-moduleid-methods·post·responses·200"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·1a1vv2b·twins-deviceid-modules-moduleid-methods·post·responses·200"
          ]
         }
        },
@@ -19810,7 +19810,7 @@
          ],
          "name": "paths·1tkjuz5·digitaltwins-id·get·parameters·0",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1tkjuz5·digitaltwins-id·get·parameters·0"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1tkjuz5·digitaltwins-id·get·parameters·0"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -19913,7 +19913,7 @@
          ],
          "name": "paths·d0hqrw·digitaltwins-id·get·responses·200",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·d0hqrw·digitaltwins-id·get·responses·200"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·d0hqrw·digitaltwins-id·get·responses·200"
          ]
         }
        },
@@ -19979,7 +19979,7 @@
          ],
          "name": "paths·f78rs6·digitaltwins-id·patch·parameters·0",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·f78rs6·digitaltwins-id·patch·parameters·0"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·f78rs6·digitaltwins-id·patch·parameters·0"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -20028,7 +20028,7 @@
          ],
          "name": "paths·11buglb·digitaltwins-id·patch·requestbody",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/requestBodies/paths·11buglb·digitaltwins-id·patch·requestbody"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/requestBodies/paths·11buglb·digitaltwins-id·patch·requestbody"
          ]
         },
         "x-ms-requestBody-name": "digitalTwinPatch"
@@ -20088,7 +20088,7 @@
          ],
          "name": "paths·1miyl44·digitaltwins-id·patch·parameters·1",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1miyl44·digitaltwins-id·patch·parameters·1"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1miyl44·digitaltwins-id·patch·parameters·1"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -20180,7 +20180,7 @@
          ],
          "name": "paths·121lnpx·digitaltwins-id·patch·responses·202",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·121lnpx·digitaltwins-id·patch·responses·202"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·121lnpx·digitaltwins-id·patch·responses·202"
          ]
         }
        },
@@ -20243,7 +20243,7 @@
          ],
          "name": "paths·1gucrlh·digitaltwins-id-commands-commandname·post·parameters·0",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1gucrlh·digitaltwins-id-commands-commandname·post·parameters·0"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1gucrlh·digitaltwins-id-commands-commandname·post·parameters·0"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -20294,7 +20294,7 @@
          ],
          "name": "paths·cuyncu·digitaltwins-id-commands-commandname·post·parameters·1",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·cuyncu·digitaltwins-id-commands-commandname·post·parameters·1"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·cuyncu·digitaltwins-id-commands-commandname·post·parameters·1"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -20342,7 +20342,7 @@
          ],
          "name": "paths·tkf3p1·digitaltwins-id-commands-commandname·post·requestbody",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/requestBodies/paths·tkf3p1·digitaltwins-id-commands-commandname·post·requestbody"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/requestBodies/paths·tkf3p1·digitaltwins-id-commands-commandname·post·requestbody"
          ]
         },
         "x-ms-requestBody-name": "payload"
@@ -20429,7 +20429,7 @@
          ],
          "name": "paths·e18es3·digitaltwins-id-commands-commandname·post·parameters·3",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·e18es3·digitaltwins-id-commands-commandname·post·parameters·3"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·e18es3·digitaltwins-id-commands-commandname·post·parameters·3"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -20482,7 +20482,7 @@
          ],
          "name": "paths·1o105wg·digitaltwins-id-commands-commandname·post·parameters·4",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1o105wg·digitaltwins-id-commands-commandname·post·parameters·4"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1o105wg·digitaltwins-id-commands-commandname·post·parameters·4"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -20551,7 +20551,7 @@
          ],
          "name": "paths·3c3d3f·digitaltwins-id-commands-commandname·post·responses·200",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·3c3d3f·digitaltwins-id-commands-commandname·post·responses·200"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·3c3d3f·digitaltwins-id-commands-commandname·post·responses·200"
          ]
         }
        },
@@ -20618,7 +20618,7 @@
          ],
          "name": "paths·1vj9ah2·digitaltwins-id-components-componentpath-commands-commandname·post·parameters·0",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1vj9ah2·digitaltwins-id-components-componentpath-commands-commandname·post·parameters·0"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1vj9ah2·digitaltwins-id-components-componentpath-commands-commandname·post·parameters·0"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -20669,7 +20669,7 @@
          ],
          "name": "paths·sv78xn·digitaltwins-id-components-componentpath-commands-commandname·post·parameters·1",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·sv78xn·digitaltwins-id-components-componentpath-commands-commandname·post·parameters·1"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·sv78xn·digitaltwins-id-components-componentpath-commands-commandname·post·parameters·1"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -20720,7 +20720,7 @@
          ],
          "name": "paths·3haext·digitaltwins-id-components-componentpath-commands-commandname·post·parameters·2",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·3haext·digitaltwins-id-components-componentpath-commands-commandname·post·parameters·2"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·3haext·digitaltwins-id-components-componentpath-commands-commandname·post·parameters·2"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -20768,7 +20768,7 @@
          ],
          "name": "paths·vpkxzw·digitaltwins-id-components-componentpath-commands-commandname·post·requestbody",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/requestBodies/paths·vpkxzw·digitaltwins-id-components-componentpath-commands-commandname·post·requestbody"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/requestBodies/paths·vpkxzw·digitaltwins-id-components-componentpath-commands-commandname·post·requestbody"
          ]
         },
         "x-ms-requestBody-name": "payload"
@@ -20855,7 +20855,7 @@
          ],
          "name": "paths·ncf3ff·digitaltwins-id-components-componentpath-commands-commandname·post·parameters·4",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·ncf3ff·digitaltwins-id-components-componentpath-commands-commandname·post·parameters·4"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·ncf3ff·digitaltwins-id-components-componentpath-commands-commandname·post·parameters·4"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -20908,7 +20908,7 @@
          ],
          "name": "paths·1lu4jxs·digitaltwins-id-components-componentpath-commands-commandname·post·parameters·5",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/parameters/paths·1lu4jxs·digitaltwins-id-components-componentpath-commands-commandname·post·parameters·5"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/parameters/paths·1lu4jxs·digitaltwins-id-components-componentpath-commands-commandname·post·parameters·5"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -20977,7 +20977,7 @@
          ],
          "name": "paths·n9llrq·digitaltwins-id-components-componentpath-commands-commandname·post·responses·200",
          "originalLocations": [
-          "file:///E:/GitRepos-work/azure-iot-sdk-python/azure-iot-hub/service.json#/components/responses/paths·n9llrq·digitaltwins-id-components-componentpath-commands-commandname·post·responses·200"
+          "file:///E:/GitRepos-work/azure-iot-hub/service.json#/components/responses/paths·n9llrq·digitaltwins-id-components-componentpath-commands-commandname·post·responses·200"
          ]
         }
        },
