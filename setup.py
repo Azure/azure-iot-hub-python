@@ -89,8 +89,6 @@ setup(
             "samples.*",
             "pip_alias",
             "pip_alias.*",
-            "vsts",
-            "vsts.*",
             # Exclude packages that will be covered by PEP420 or nspkg
             "azure",
             "azure.iot",
