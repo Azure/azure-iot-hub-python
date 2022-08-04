@@ -28,7 +28,7 @@ except ImportError:
 with open("README.md", "r") as fh:
     _long_description = fh.read()
 
-filename = "azure/iot/hub/constant.py"
+filename = "src/azure/iot/hub/constant.py"
 version = None
 
 with open(filename, "r") as fh:
@@ -82,17 +82,13 @@ setup(
     ],
     python_requires=">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3*, <4",
     packages=find_packages(
+        where="src",
         exclude=[
-            "tests",
-            "tests.*",
-            "samples",
-            "samples.*",
-            "pip_alias",
-            "pip_alias.*",
             # Exclude packages that will be covered by PEP420 or nspkg
             "azure",
             "azure.iot",
         ]
     ),
+    package_dir={"": "src"},
     zip_safe=False,
 )

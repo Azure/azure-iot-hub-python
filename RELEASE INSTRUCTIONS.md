@@ -8,7 +8,7 @@ git checkout -b <branch_name>
 ```
 
 ## Bump the version
-Increment the `VERSION` constant that is defined in `azure/iot/hub/constant.py`
+Increment the `VERSION` constant that is defined in `src/azure/iot/hub/constant.py`
 
 We use [semantic versioning](https://semver.org/) to version our libraries.
 
