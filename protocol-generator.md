@@ -23,6 +23,6 @@ input-file: service.json
 
 python:
     namespace: protocol
-    output-folder: azure/iot/hub
+    output-folder: src/azure/iot/hub
     add-credentials: True
 ```
