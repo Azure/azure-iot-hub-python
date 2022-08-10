@@ -30,9 +30,10 @@ When the commands are run, a `./dist` directory will be created within the root 
 e.g.
 ```
 .
-+-- azure
-    +-- iot
-        +-- hub
++-- src
+    +-- azure
+        +-- iot
+            +-- hub
 +-- setup.py
 +-- setup.cfg
 +-- ...
