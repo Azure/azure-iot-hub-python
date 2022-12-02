@@ -137,7 +137,7 @@ class IoTHubRegistryManager(object):
         device_scope=None,
         parent_scopes=None,
     ):
-        """Creates a device identity on IoTHub using SAS authentication.
+        """Creates a device identity on IoTHub that will use SAS as authentication method.
 
         :param str device_id: The name (Id) of the device.
         :param str primary_key: Primary authentication key.
