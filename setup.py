@@ -77,7 +77,6 @@ setup(
     install_requires=[
         "msrest>=0.6.21,<1.0.0",
         # NOTE: Python 2.7, 3.5 support dropped >= 1.4.0
-        "uamqp>=1.2.14,<2.0.0",
         "azure-core>=1.10.0,<2.0.0",
     ],
     python_requires=">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, <4",

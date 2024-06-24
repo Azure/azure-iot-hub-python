@@ -3,7 +3,6 @@
 # Licensed under the MIT License. See License.txt in the project root for
 # license information.
 # --------------------------------------------------------------------------
-from . import iothub_amqp_client
 from .auth import ConnectionStringAuthentication, AzureIdentityCredentialAdapter
 from .protocol.iot_hub_gateway_service_ap_is import IotHubGatewayServiceAPIs as protocol_client
 from .protocol.models import (
@@ -69,23 +68,14 @@ class IoTHubRegistryManager(object):
         :returns: Instance of the IoTHubRegistryManager object.
         :rtype: :class:`azure.iot.hub.IoTHubRegistryManager`
         """
-        self.amqp_svc_client = None
         if connection_string is not None:
             conn_string_auth = ConnectionStringAuthentication(connection_string)
             self.protocol = protocol_client(
                 conn_string_auth, "https://" + conn_string_auth["HostName"]
             )
-            self.amqp_svc_client = iothub_amqp_client.IoTHubAmqpClientSharedAccessKeyAuth(
-                conn_string_auth["HostName"],
-                conn_string_auth["SharedAccessKeyName"],
-                conn_string_auth["SharedAccessKey"],
-            )
         else:
             self.protocol = protocol_client(
                 AzureIdentityCredentialAdapter(token_credential), "https://" + host
-            )
-            self.amqp_svc_client = iothub_amqp_client.IoTHubAmqpClientTokenAuth(
-                host, token_credential
             )
 
     @classmethod
@@ -118,13 +108,6 @@ class IoTHubRegistryManager(object):
         :rtype: :class:`azure.iot.hub.IoTHubRegistryManager`
         """
         return cls(host=url, token_credential=token_credential)
-
-    def __del__(self):
-        """
-        Deinitializer for a Registry Manager Service client.
-        """
-        if self.amqp_svc_client is not None:
-            self.amqp_svc_client.disconnect_sync()
 
     def create_device_with_sas(
         self,
@@ -914,15 +897,3 @@ class IoTHubRegistryManager(object):
             direct_method_request.payload = ""
 
         return self.protocol.modules.invoke_method(device_id, module_id, direct_method_request)
-
-    def send_c2d_message(self, device_id, message, properties={}):
-        """Send a C2D message to a IoTHub Device.
-
-        :param str device_id: The name (Id) of the device.
-        :param str message: The message that is to be delivered to the device.
-        :param dict properties: The properties to be send with the message.  Can contain
-            application properties and system properties
-
-        :raises: Exception if the Send command is not able to send the message
-        """
-        self.amqp_svc_client.send_message_to_device(device_id, message, properties)
