@@ -68,7 +68,7 @@ class IoTHubAmqpClientBase:
 
 
 class IoTHubAmqpClientSharedAccessKeyAuth(IoTHubAmqpClientBase):
-    def __init__(self, hostname, shared_access_key_name, shared_access_key):
+    def __init__(self, hostname, shared_access_key_name, shared_access_key, transport_type=uamqp.TransportType.Amqp):
         def get_token():
             expiry = int(time.time() + default_sas_expiry)
             sas = base64.b64decode(shared_access_key)
@@ -87,18 +87,20 @@ class IoTHubAmqpClientSharedAccessKeyAuth(IoTHubAmqpClientBase):
             uri="https://" + hostname,
             get_token=get_token,
             token_type=b"servicebus.windows.net:sastoken",
+            transport_type=transport_type,
         )
         auth.update_token()
         self.amqp_client = uamqp.SendClient(
             target="amqps://" + hostname + "/messages/devicebound",
             auth=auth,
             keep_alive_interval=120,
+            transport_type=transport_type,
         )
 
 
 class IoTHubAmqpClientTokenAuth(IoTHubAmqpClientBase):
     def __init__(
-        self, hostname, token_credential, token_scope="https://iothubs.azure.net/.default"
+        self, hostname, token_credential, token_scope="https://iothubs.azure.net/.default", transport_type=uamqp.TransportType.Amqp
     ):
         def get_token():
             result = token_credential.get_token(token_scope)
@@ -109,7 +111,8 @@ class IoTHubAmqpClientTokenAuth(IoTHubAmqpClientBase):
             uri="https://" + hostname,
             get_token=get_token,
             token_type=b"bearer",
+            transport_type=transport_type
         )
         auth.update_token()
         target = "amqps://" + hostname + "/messages/devicebound"
-        self.amqp_client = uamqp.SendClient(target=target, auth=auth, keep_alive_interval=120)
+        self.amqp_client = uamqp.SendClient(target=target, auth=auth, keep_alive_interval=120, transport_type=transport_type)

@@ -147,13 +147,14 @@ class TestIoTHubAmqpClientSharedAccessKeyAuthInstantiation(
         assert amqp_token_init_mock.call_args[1]["uri"] == "https://" + fake_hostname
         assert amqp_token_init_mock.call_args[1]["audience"] == "https://" + fake_hostname
         assert amqp_token_init_mock.call_args[1]["token_type"] == b"servicebus.windows.net:sastoken"
+        assert amqp_token_init_mock.call_args[1]["transport_type"] == uamqp.TransportType.Amqp
         assert amqp_token_mock.update_token.call_count == 1
 
         # AMQP SendClient is created
         assert mock_uamqp_SendClient.call_count == 1
         expected_target = "amqps://" + fake_hostname + "/messages/devicebound"
         assert mock_uamqp_SendClient.call_args == mocker.call(
-            target=expected_target, auth=amqp_token_mock, keep_alive_interval=120
+            target=expected_target, auth=amqp_token_mock, keep_alive_interval=120, transport_type=uamqp.TransportType.Amqp
         )
 
     @pytest.mark.it("Creates an HMAC to generate a shared access signature")
@@ -229,13 +230,14 @@ class TestIotHubAmqpClientTokenAuthInstantiation(IoTHubAmqpClientTokenAuthTestCo
         assert amqp_token_init_mock.call_args[1]["uri"] == "https://" + fake_hostname
         assert amqp_token_init_mock.call_args[1]["audience"] == fake_token_scope
         assert amqp_token_init_mock.call_args[1]["token_type"] == b"bearer"
+        assert amqp_token_init_mock.call_args[1]["transport_type"] == uamqp.TransportType.Amqp
         assert amqp_token_mock.update_token.call_count == 1
 
         # AMQP SendClient is created
         assert mock_uamqp_SendClient.call_count == 1
         expected_target = "amqps://" + fake_hostname + "/messages/devicebound"
         assert mock_uamqp_SendClient.call_args == mocker.call(
-            target=expected_target, auth=amqp_token_mock, keep_alive_interval=120
+            target=expected_target, auth=amqp_token_mock, keep_alive_interval=120, transport_type=uamqp.TransportType.Amqp
         )
 
     @pytest.mark.it(
@@ -254,13 +256,40 @@ class TestIotHubAmqpClientTokenAuthInstantiation(IoTHubAmqpClientTokenAuthTestCo
         assert amqp_token_init_mock.call_args[1]["uri"] == "https://" + fake_hostname
         assert amqp_token_init_mock.call_args[1]["audience"] == "https://iothubs.azure.net/.default"
         assert amqp_token_init_mock.call_args[1]["token_type"] == b"bearer"
+        assert amqp_token_init_mock.call_args[1]["transport_type"] == uamqp.TransportType.Amqp
         assert amqp_token_mock.update_token.call_count == 1
 
         # AMQP SendClient is created
         assert mock_uamqp_SendClient.call_count == 1
         expected_target = "amqps://" + fake_hostname + "/messages/devicebound"
         assert mock_uamqp_SendClient.call_args == mocker.call(
-            target=expected_target, auth=amqp_token_mock, keep_alive_interval=120
+            target=expected_target, auth=amqp_token_mock, keep_alive_interval=120, transport_type=uamqp.TransportType.Amqp
+        )
+
+    @pytest.mark.it(
+        "Creates a JWTTokenAuth instance with the correct parameters and uses it to create an AMQP Over WebSocket SendClient if no token scope is provided (uses the default scope of 'https://iothubs.azure.net/.default')"
+    )
+    def test_create_JWTTokenAuth_with_bearer_token_default_scope_AmqpOverWebsocket(
+        self, mocker, mock_azure_identity_TokenCredential, mock_uamqp_SendClient
+    ):
+        amqp_token_init_mock = mocker.patch.object(uamqp.authentication, "JWTTokenAuth")
+        amqp_token_mock = amqp_token_init_mock.return_value
+
+        IoTHubAmqpClientTokenAuth(fake_hostname, mock_azure_identity_TokenCredential, transport_type=uamqp.TransportType.AmqpOverWebsocket)
+
+        # JWTTokenAuth Creation
+        assert amqp_token_init_mock.call_count == 1
+        assert amqp_token_init_mock.call_args[1]["uri"] == "https://" + fake_hostname
+        assert amqp_token_init_mock.call_args[1]["audience"] == "https://iothubs.azure.net/.default"
+        assert amqp_token_init_mock.call_args[1]["token_type"] == b"bearer"
+        assert amqp_token_init_mock.call_args[1]["transport_type"] == uamqp.TransportType.AmqpOverWebsocket
+        assert amqp_token_mock.update_token.call_count == 1
+
+        # AMQP SendClient is created
+        assert mock_uamqp_SendClient.call_count == 1
+        expected_target = "amqps://" + fake_hostname + "/messages/devicebound"
+        assert mock_uamqp_SendClient.call_args == mocker.call(
+            target=expected_target, auth=amqp_token_mock, keep_alive_interval=120, transport_type=uamqp.TransportType.AmqpOverWebsocket
         )
 
     @pytest.mark.it(
