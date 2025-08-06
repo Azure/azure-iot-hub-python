@@ -14,6 +14,7 @@ from .protocol.models import (
     AuthenticationMechanism,
     DeviceCapabilities,
 )
+from uamqp import TransportType
 
 
 def _ensure_quoted(etag):
@@ -50,7 +51,7 @@ class IoTHubRegistryManager(object):
     based on top of the auto generated IotHub REST APIs
     """
 
-    def __init__(self, connection_string=None, host=None, token_credential=None):
+    def __init__(self, connection_string=None, host=None, token_credential=None, transport_type=TransportType.Amqp):
         """Initializer for a Registry Manager Service client.
 
         Users should not call this directly. Rather, they should the from_connection_string()
@@ -63,8 +64,11 @@ class IoTHubRegistryManager(object):
             with IoTHub if we are using connection_str authentication. Default value: None
         :param str host: The Azure service url if we are using token credential authentication.
             Default value: None
-        :param str auth: The Azure authentication object if we are using token credential authentication.
+        :param str token_credential: The Azure authentication object if we are using token credential authentication.
             Default value: None
+        :param transport_type: The underlying transport protocol type: Amqp: AMQP over the default TCP transport protocol, it uses port 5671. AmqpOverWebsocket: Amqp over the Web Sockets transport protocol, it uses port 443.
+            Default value: Amqp
+        :type transport_type: :class:`uamqp.TransportType`
 
         :returns: Instance of the IoTHubRegistryManager object.
         :rtype: :class:`azure.iot.hub.IoTHubRegistryManager`
@@ -79,17 +83,18 @@ class IoTHubRegistryManager(object):
                 conn_string_auth["HostName"],
                 conn_string_auth["SharedAccessKeyName"],
                 conn_string_auth["SharedAccessKey"],
+                transport_type,
             )
         else:
             self.protocol = protocol_client(
                 AzureIdentityCredentialAdapter(token_credential), "https://" + host
             )
             self.amqp_svc_client = iothub_amqp_client.IoTHubAmqpClientTokenAuth(
-                host, token_credential
+                host, token_credential, transport_type=transport_type
             )
 
     @classmethod
-    def from_connection_string(cls, connection_string):
+    def from_connection_string(cls, connection_string, transport_type=TransportType.Amqp):
         """Classmethod initializer for a Registry Manager Service client.
         Creates Registry Manager class from connection string.
 
@@ -98,13 +103,16 @@ class IoTHubRegistryManager(object):
 
         :param str connection_string: The IoTHub connection string used to authenticate connection
             with IoTHub.
+        :param transport_type: The underlying transport protocol type: Amqp: AMQP over the default TCP transport protocol, it uses port 5671. AmqpOverWebsocket: Amqp over the Web Sockets transport protocol, it uses port 443.
+            Default value: Amqp
+        :type transport_type: :class:`uamqp.TransportType`
 
         :rtype: :class:`azure.iot.hub.IoTHubRegistryManager`
         """
-        return cls(connection_string=connection_string)
+        return cls(connection_string=connection_string, transport_type=transport_type)
 
     @classmethod
-    def from_token_credential(cls, url, token_credential):
+    def from_token_credential(cls, url, token_credential, transport_type=TransportType.Amqp):
         """Classmethod initializer for a Registry Manager Service client.
         Creates Registry Manager class from host name url and Azure token credential.
 
@@ -114,10 +122,13 @@ class IoTHubRegistryManager(object):
         :param str url: The Azure service url (host name).
         :param token_credential: The Azure token credential object
         :type token_credential: :class:`azure.core.TokenCredential`
+        :param transport_type: The underlying transport protocol type: Amqp: AMQP over the default TCP transport protocol, it uses port 5671. AmqpOverWebsocket: Amqp over the Web Sockets transport protocol, it uses port 443.
+            Default value: Amqp
+        :type transport_type: :class:`uamqp.TransportType`
 
         :rtype: :class:`azure.iot.hub.IoTHubRegistryManager`
         """
-        return cls(host=url, token_credential=token_credential)
+        return cls(host=url, token_credential=token_credential, transport_type=transport_type)
 
     def __del__(self):
         """

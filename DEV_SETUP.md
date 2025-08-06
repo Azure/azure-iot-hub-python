@@ -33,7 +33,7 @@ pip install -r requirements_dev.txt
 
 You now will have the ability to release packages (see [RELEASE INSTRUCTIONS](./RELEASE%20INSTRUCTIONS.md) for more information).
 
-To install pre-commit, allowing for automatic static analysis and code formatting, after doing the above, additionally runt he following command:
+To install pre-commit, allowing for automatic static analysis and code formatting, after doing the above, additionally run the following command:
 
 ```
 pre-commit install
