@@ -7,7 +7,9 @@
 import base64
 import hashlib
 import pytest
-import uamqp
+
+uamqp = pytest.importorskip("uamqp")
+
 import hmac
 from azure.core.credentials import AccessToken
 from azure.iot.hub.iothub_amqp_client import (

@@ -6,10 +6,13 @@
 
 import pytest
 from azure.iot.hub.protocol.models import AuthenticationMechanism, DeviceCapabilities
-from azure.iot.hub.iothub_registry_manager import IoTHubRegistryManager
+from azure.iot.hub.iothub_registry_manager import IoTHubRegistryManager, TransportType
 from azure.iot.hub import iothub_amqp_client
 from azure.iot.hub.protocol.iot_hub_gateway_service_ap_is import IotHubGatewayServiceAPIs
-from uamqp import TransportType
+
+requires_uamqp = pytest.mark.skipif(
+    not iothub_amqp_client.HAS_UAMQP, reason="uamqp not installed"
+)
 
 """---Constants---"""
 
@@ -161,6 +164,7 @@ class TestFromConnectionString:
             ),
         ],
     )
+    @requires_uamqp
     @pytest.mark.it(
         "Creates an instance of IotHubGatewayServiceAPIs and IoTHubAmqpClientSharedAccessKeyAuth with the correct arguments"
     )
@@ -205,6 +209,7 @@ class TestFromConnectionString:
             ),
         ],
     )
+    @requires_uamqp
     @pytest.mark.it(
         "Creates an instance of IotHubGatewayServiceAPIs and IoTHubAmqpClientSharedAccessKeyAuth with the correct arguments and using AMQP over Websocket"
     )
@@ -275,6 +280,7 @@ class TestFromConnectionString:
 
 @pytest.mark.describe("IoTHubRegistryManager - .from_token_credential()")
 class TestFromTokenCredential:
+    @requires_uamqp
     @pytest.mark.it(
         "Creates an instance of IotHubGatewayServiceAPIs and IoTHubAmqpClientTokenAuth with the correct arguments"
     )
@@ -294,6 +300,7 @@ class TestFromTokenCredential:
         assert amqp_client_init_mock.call_args == mocker.call(
             fake_hostname, mock_azure_identity_TokenCredential, transport_type=TransportType.Amqp
         )
+    @requires_uamqp
     def test_token_credential_auth_with_amqp_over_websocket(self, mocker):
         mock_azure_identity_TokenCredential = mocker.MagicMock()
         amqp_client_init_mock = mocker.patch.object(iothub_amqp_client, "IoTHubAmqpClientTokenAuth")
@@ -1430,6 +1437,7 @@ class TestInvokeDeviceModuleMethodWithPayloadNone(object):
 
 
 @pytest.mark.describe("IoTHubRegistryManager - .send_c2d_message()")
+@requires_uamqp
 class TestSendC2dMessage(object):
     @pytest.mark.it("Test send c2d message")
     def test_send_c2d_message(
@@ -1445,6 +1453,7 @@ class TestSendC2dMessage(object):
 
 
 @pytest.mark.describe("IoTHubRegistryManager - .send_c2d_message() with properties")
+@requires_uamqp
 class TestSendC2dMessageWithProperties(object):
     @pytest.mark.it("Test send c2d message with properties")
     def test_send_c2d_message_with_properties(

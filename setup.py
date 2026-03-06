@@ -76,10 +76,20 @@ setup(
     ],
     install_requires=[
         "msrest>=0.6.21,<1.0.0",
-        # NOTE: Python 2.7, 3.5 support dropped >= 1.4.0
-        "uamqp>=1.2.14,<2.0.0",
         "azure-core>=1.10.0,<2.0.0",
+        "six>=1.12.0",
+        # uamqp is a C extension that fails to build on ARM macOS (Apple Silicon) with recent
+        # clang versions due to stricter type checking. It is excluded from automatic installation
+        # on that platform only; all other platforms (Windows, Linux, Intel Mac) get it by default.
+        # ARM Mac users who need C2D messaging can opt in: pip install azure-iot-hub[uamqp]
+        # NOTE: Python 2.7, 3.5 support dropped in uamqp >= 1.4.0
+        "uamqp>=1.2.14,<2.0.0; platform_machine != 'arm64' or sys_platform != 'darwin'",
     ],
+    extras_require={
+        # Opt-in for ARM macOS users whose environment can build uamqp.
+        # Also usable on any platform to pin/re-add the dependency explicitly.
+        "uamqp": ["uamqp>=1.2.14,<2.0.0"],
+    },
     python_requires=">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, <4",
     packages=find_packages(
         where="src",

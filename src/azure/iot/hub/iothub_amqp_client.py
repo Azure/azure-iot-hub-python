@@ -11,8 +11,19 @@ import hmac
 from uuid import uuid4
 import six.moves.urllib as urllib
 from azure.core.credentials import AccessToken
-import uamqp
 
+try:
+    import uamqp
+
+    HAS_UAMQP = True
+except ImportError:
+    HAS_UAMQP = False
+
+_UAMQP_MISSING_ERROR = (
+    "uamqp is required for AMQP-based C2D messaging but is not installed. "
+    "On ARM macOS (Apple Silicon) it is not installed automatically due to build compatibility "
+    "issues with recent clang versions. Install it separately with: pip install azure-iot-hub[uamqp]"
+)
 
 default_sas_expiry = 3600
 
@@ -35,6 +46,8 @@ class IoTHubAmqpClientBase:
 
         :raises: Exception if the Send command is not able to send the message
         """
+        if not HAS_UAMQP:
+            raise ImportError(_UAMQP_MISSING_ERROR)
         msg_content = message
         msg_props = uamqp.message.MessageProperties()
         msg_props.message_id = str(uuid4())
@@ -68,7 +81,12 @@ class IoTHubAmqpClientBase:
 
 
 class IoTHubAmqpClientSharedAccessKeyAuth(IoTHubAmqpClientBase):
-    def __init__(self, hostname, shared_access_key_name, shared_access_key, transport_type=uamqp.TransportType.Amqp):
+    def __init__(self, hostname, shared_access_key_name, shared_access_key, transport_type=None):
+        if not HAS_UAMQP:
+            raise ImportError(_UAMQP_MISSING_ERROR)
+        if transport_type is None:
+            transport_type = uamqp.TransportType.Amqp
+
         def get_token():
             expiry = int(time.time() + default_sas_expiry)
             sas = base64.b64decode(shared_access_key)
@@ -100,8 +118,13 @@ class IoTHubAmqpClientSharedAccessKeyAuth(IoTHubAmqpClientBase):
 
 class IoTHubAmqpClientTokenAuth(IoTHubAmqpClientBase):
     def __init__(
-        self, hostname, token_credential, token_scope="https://iothubs.azure.net/.default", transport_type=uamqp.TransportType.Amqp
+        self, hostname, token_credential, token_scope="https://iothubs.azure.net/.default", transport_type=None
     ):
+        if not HAS_UAMQP:
+            raise ImportError(_UAMQP_MISSING_ERROR)
+        if transport_type is None:
+            transport_type = uamqp.TransportType.Amqp
+
         def get_token():
             result = token_credential.get_token(token_scope)
             return AccessToken("Bearer " + result.token, result.expires_on)
