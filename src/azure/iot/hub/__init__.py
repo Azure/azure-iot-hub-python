@@ -8,6 +8,7 @@ from .iothub_configuration_manager import IoTHubConfigurationManager
 from .iothub_job_manager import IoTHubJobManager
 from .iothub_http_runtime_manager import IoTHubHttpRuntimeManager
 from .digital_twin_client import DigitalTwinClient
+from ._pyamqp.constants import TransportType
 
 __all__ = [
     "IoTHubRegistryManager",
@@ -15,4 +16,5 @@ __all__ = [
     "IoTHubJobManager",
     "IoTHubHttpRuntimeManager",
     "DigitalTwinClient",
+    "TransportType",
 ]

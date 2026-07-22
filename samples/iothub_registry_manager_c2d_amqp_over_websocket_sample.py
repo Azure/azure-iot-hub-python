@@ -6,8 +6,7 @@
 
 import os
 import msrest
-from azure.iot.hub import IoTHubRegistryManager
-from uamqp import TransportType
+from azure.iot.hub import IoTHubRegistryManager, TransportType
 
 connection_str = os.getenv("IOTHUB_CONNECTION_STRING")
 device_id = os.getenv("IOTHUB_DEVICE_ID")

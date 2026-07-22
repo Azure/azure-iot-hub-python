@@ -72,8 +72,11 @@ setup(
     ],
     install_requires=[
         "msrest>=0.6.21,<1.0.0",
-        "uamqp>=1.2.14,<2.0.0",
         "azure-core>=1.10.0,<2.0.0",
+        # Runtime dependencies of the vendored pyamqp (see src/azure/iot/hub/_pyamqp/VENDOR.md).
+        "certifi>=2017.4.17",
+        "typing_extensions>=4.0.1",
+        "websocket-client>=1.0.0",
     ],
     python_requires=">=3.8",
     packages=find_packages(
