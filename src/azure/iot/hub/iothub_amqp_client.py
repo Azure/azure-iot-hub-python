@@ -9,7 +9,7 @@ import time
 import hashlib
 import hmac
 from uuid import uuid4
-import six.moves.urllib as urllib
+from urllib import parse as urllib_parse
 from azure.core.credentials import AccessToken
 import uamqp
 
@@ -74,7 +74,7 @@ class IoTHubAmqpClientSharedAccessKeyAuth(IoTHubAmqpClientBase):
             sas = base64.b64decode(shared_access_key)
             string_to_sign = (hostname + "\n" + str(expiry)).encode("utf-8")
             signed_hmac_sha256 = hmac.HMAC(sas, string_to_sign, hashlib.sha256)
-            signature = urllib.parse.quote(base64.b64encode(signed_hmac_sha256.digest()))
+            signature = urllib_parse.quote(base64.b64encode(signed_hmac_sha256.digest()))
             return AccessToken(
                 "SharedAccessSignature sr={}&sig={}&se={}&skn={}".format(
                     hostname, signature, expiry, shared_access_key_name

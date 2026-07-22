@@ -9,7 +9,7 @@ import base64
 import hmac
 import hashlib
 import time
-import six.moves.urllib as urllib
+from urllib import parse as urllib_parse
 
 
 class SasTokenError(Exception):
@@ -47,7 +47,7 @@ class SasToken(object):
     _device_token_format = "SharedAccessSignature sr={}&sig={}&se={}"
 
     def __init__(self, uri, key, key_name=None, ttl=3600):
-        self._uri = urllib.parse.quote_plus(uri)
+        self._uri = urllib_parse.quote_plus(uri)
         self._key = key
         self._key_name = key_name
         self.ttl = ttl
@@ -73,7 +73,7 @@ class SasToken(object):
             message = (self._uri + "\n" + str(self.expiry_time)).encode(self._encoding_type)
             signing_key = base64.b64decode(self._key.encode(self._encoding_type))
             signed_hmac = hmac.HMAC(signing_key, message, hashlib.sha256)
-            signature = urllib.parse.quote(base64.b64encode(signed_hmac.digest()))
+            signature = urllib_parse.quote(base64.b64encode(signed_hmac.digest()))
         except (TypeError, base64.binascii.Error) as e:
             raise SasTokenError("Unable to build SasToken from given values", e)
         if self._key_name:
