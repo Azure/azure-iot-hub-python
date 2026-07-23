@@ -12,6 +12,7 @@ from azure.core.credentials import AccessToken
 from azure.iot.hub._pyamqp.constants import TransportType
 from azure.iot.hub._pyamqp.error import AMQPException, ErrorCondition
 from azure.iot.hub.iothub_amqp_client import (
+    C2DMessageSendError,
     IoTHubAmqpClientSharedAccessKeyAuth,
     IoTHubAmqpClientTokenAuth,
 )
@@ -73,13 +74,13 @@ class SharedIotHubAmqpClientSendMessageToDeviceTests(object):
         assert msg_obj.properties.absolute_expiry_time == fake_sys_prop["expiryTimeUtc"]
         assert msg_obj.properties.message_id == fake_sys_prop["messageId"]
 
-    @pytest.mark.it("Raises an Exception if pyamqp send_message raises an AMQPException")
+    @pytest.mark.it("Raises a C2DMessageSendError if pyamqp send_message raises an AMQPException")
     def test_raise_exception_on_send_fail(self, client, mocker, mock_SendClient):
         amqp_client_obj = mock_SendClient.return_value
         amqp_client_obj.send_message.side_effect = AMQPException(
             condition=ErrorCondition.UnknownError, description="fake failure"
         )
-        with pytest.raises(Exception, match="C2D message send failure"):
+        with pytest.raises(C2DMessageSendError, match="C2D message send failure"):
             client.send_message_to_device(fake_device_id, fake_message, fake_app_prop)
 
 
@@ -129,17 +130,17 @@ class TestIoTHubAmqpClientSharedAccessKeyAuthInstantiation(
 
         # JWTTokenAuth creation
         assert amqp_token_init_mock.call_count == 1
-        args, kwargs = amqp_token_init_mock.call_args
-        assert args[0] == "https://" + fake_hostname
-        assert args[1] == "https://" + fake_hostname
-        assert callable(args[2])
+        _, kwargs = amqp_token_init_mock.call_args
+        assert kwargs["uri"] == "https://" + fake_hostname
+        assert kwargs["audience"] == "https://" + fake_hostname
+        assert callable(kwargs["get_token"])
         assert kwargs["token_type"] == b"servicebus.windows.net:sastoken"
 
         # AMQP SendClient is created
         assert mock_SendClient.call_count == 1
         assert mock_SendClient.call_args == mocker.call(
-            fake_hostname,
-            expected_target,
+            hostname=fake_hostname,
+            target=expected_target,
             auth=amqp_token_mock,
             keep_alive_interval=120,
             transport_type=TransportType.Amqp,
@@ -161,35 +162,39 @@ class TestIoTHubAmqpClientSharedAccessKeyAuthInstantiation(
 
         # JWTTokenAuth creation
         assert amqp_token_init_mock.call_count == 1
-        args, kwargs = amqp_token_init_mock.call_args
-        assert args[0] == "https://" + fake_hostname
-        assert args[1] == "https://" + fake_hostname
-        assert callable(args[2])
+        _, kwargs = amqp_token_init_mock.call_args
+        assert kwargs["uri"] == "https://" + fake_hostname
+        assert kwargs["audience"] == "https://" + fake_hostname
+        assert callable(kwargs["get_token"])
         assert kwargs["token_type"] == b"servicebus.windows.net:sastoken"
 
         # AMQP over Websocket SendClient is created
         assert mock_SendClient.call_count == 1
         assert mock_SendClient.call_args == mocker.call(
-            fake_hostname,
-            expected_target,
+            hostname=fake_hostname,
+            target=expected_target,
             auth=amqp_token_mock,
             keep_alive_interval=120,
             transport_type=TransportType.AmqpOverWebsocket,
         )
 
-    @pytest.mark.it("Creates an HMAC to generate a shared access signature")
-    def test_creates_hmac(self, mocker):
+    @pytest.mark.it(
+        "Signs the SAS token with HMAC-SHA256 when the JWTTokenAuth get_token callback is invoked"
+    )
+    def test_get_token_callback_signs_sas_with_hmac(self, mocker):
         hmac_mock = mocker.patch.object(hmac, "HMAC")
         hmac_digest_mock = hmac_mock.return_value.digest
         hmac_digest_mock.return_value = b"\xd2\x06\xf7\x12\xf1\xe9\x95$\x90\xfd\x12\x9a\xb1\xbe\xb4\xf8\xf3\xc4\x1ap\x8a\xab'\x8a.D\xfb\x84\x96\xca\xf3z"
 
-        # Also patch JWTTokenAuth so its get_token callback is invoked and exercises the HMAC path.
         amqp_token_init_mock = mocker.patch("azure.iot.hub.iothub_amqp_client.JWTTokenAuth")
 
         IoTHubAmqpClientSharedAccessKeyAuth(
             fake_hostname, fake_shared_access_key_name, fake_shared_access_key
         )
-        get_token = amqp_token_init_mock.call_args[0][2]
+
+        # pyamqp's JWTTokenAuth resolves tokens lazily via the get_token callback rather
+        # than at construction, so invoke the captured callback to drive the SAS-signing path.
+        get_token = amqp_token_init_mock.call_args.kwargs["get_token"]
         get_token()
 
         assert hmac_mock.call_count == 1
@@ -251,17 +256,17 @@ class TestIotHubAmqpClientTokenAuthInstantiation(IoTHubAmqpClientTokenAuthTestCo
 
         # JWTTokenAuth Creation
         assert amqp_token_init_mock.call_count == 1
-        args, kwargs = amqp_token_init_mock.call_args
-        assert args[0] == "https://" + fake_hostname
-        assert args[1] == fake_token_scope
-        assert callable(args[2])
+        _, kwargs = amqp_token_init_mock.call_args
+        assert kwargs["uri"] == "https://" + fake_hostname
+        assert kwargs["audience"] == fake_token_scope
+        assert callable(kwargs["get_token"])
         assert kwargs["token_type"] == b"bearer"
 
         # AMQP SendClient is created
         assert mock_SendClient.call_count == 1
         assert mock_SendClient.call_args == mocker.call(
-            fake_hostname,
-            expected_target,
+            hostname=fake_hostname,
+            target=expected_target,
             auth=amqp_token_mock,
             keep_alive_interval=120,
             transport_type=TransportType.Amqp,
@@ -280,17 +285,17 @@ class TestIotHubAmqpClientTokenAuthInstantiation(IoTHubAmqpClientTokenAuthTestCo
 
         # JWTTokenAuth Creation
         assert amqp_token_init_mock.call_count == 1
-        args, kwargs = amqp_token_init_mock.call_args
-        assert args[0] == "https://" + fake_hostname
-        assert args[1] == "https://iothubs.azure.net/.default"
-        assert callable(args[2])
+        _, kwargs = amqp_token_init_mock.call_args
+        assert kwargs["uri"] == "https://" + fake_hostname
+        assert kwargs["audience"] == "https://iothubs.azure.net/.default"
+        assert callable(kwargs["get_token"])
         assert kwargs["token_type"] == b"bearer"
 
         # AMQP SendClient is created
         assert mock_SendClient.call_count == 1
         assert mock_SendClient.call_args == mocker.call(
-            fake_hostname,
-            expected_target,
+            hostname=fake_hostname,
+            target=expected_target,
             auth=amqp_token_mock,
             keep_alive_interval=120,
             transport_type=TransportType.Amqp,
@@ -313,17 +318,17 @@ class TestIotHubAmqpClientTokenAuthInstantiation(IoTHubAmqpClientTokenAuthTestCo
 
         # JWTTokenAuth Creation
         assert amqp_token_init_mock.call_count == 1
-        args, kwargs = amqp_token_init_mock.call_args
-        assert args[0] == "https://" + fake_hostname
-        assert args[1] == "https://iothubs.azure.net/.default"
-        assert callable(args[2])
+        _, kwargs = amqp_token_init_mock.call_args
+        assert kwargs["uri"] == "https://" + fake_hostname
+        assert kwargs["audience"] == "https://iothubs.azure.net/.default"
+        assert callable(kwargs["get_token"])
         assert kwargs["token_type"] == b"bearer"
 
         # AMQP over Websocket SendClient is created
         assert mock_SendClient.call_count == 1
         assert mock_SendClient.call_args == mocker.call(
-            fake_hostname,
-            expected_target,
+            hostname=fake_hostname,
+            target=expected_target,
             auth=amqp_token_mock,
             keep_alive_interval=120,
             transport_type=TransportType.AmqpOverWebsocket,
@@ -338,7 +343,7 @@ class TestIotHubAmqpClientTokenAuthInstantiation(IoTHubAmqpClientTokenAuthTestCo
         IoTHubAmqpClientTokenAuth(
             fake_hostname, mock_azure_identity_TokenCredential, fake_token_scope
         )
-        get_token = amqp_token_init_mock.call_args[0][2]
+        get_token = amqp_token_init_mock.call_args.kwargs["get_token"]
         get_token()
         mock_azure_identity_TokenCredential.get_token.assert_called_once_with(fake_token_scope)
 

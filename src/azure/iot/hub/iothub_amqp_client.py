@@ -22,6 +22,10 @@ from ._pyamqp.message import Message, Properties
 default_sas_expiry = 3600
 
 
+class C2DMessageSendError(Exception):
+    """Raised when a cloud-to-device message fails to send."""
+
+
 class IoTHubAmqpClientBase:
     def disconnect_sync(self):
         """
@@ -70,7 +74,7 @@ class IoTHubAmqpClientBase:
         try:
             self.amqp_client.send_message(amqp_message)
         except AMQPException:
-            raise Exception("C2D message send failure")
+            raise C2DMessageSendError("C2D message send failure")
 
 
 class IoTHubAmqpClientSharedAccessKeyAuth(IoTHubAmqpClientBase):
@@ -89,14 +93,14 @@ class IoTHubAmqpClientSharedAccessKeyAuth(IoTHubAmqpClientBase):
             )
 
         auth = JWTTokenAuth(
-            "https://" + hostname,
-            "https://" + hostname,
-            get_token,
+            uri="https://" + hostname,
+            audience="https://" + hostname,
+            get_token=get_token,
             token_type=b"servicebus.windows.net:sastoken",
         )
         self.amqp_client = SendClient(
-            hostname,
-            "amqps://" + hostname + "/messages/devicebound",
+            hostname=hostname,
+            target="amqps://" + hostname + "/messages/devicebound",
             auth=auth,
             keep_alive_interval=120,
             transport_type=transport_type,
@@ -112,14 +116,14 @@ class IoTHubAmqpClientTokenAuth(IoTHubAmqpClientBase):
             return AccessToken("Bearer " + result.token, result.expires_on)
 
         auth = JWTTokenAuth(
-            "https://" + hostname,
-            token_scope,
-            get_token,
+            uri="https://" + hostname,
+            audience=token_scope,
+            get_token=get_token,
             token_type=b"bearer",
         )
         self.amqp_client = SendClient(
-            hostname,
-            "amqps://" + hostname + "/messages/devicebound",
+            hostname=hostname,
+            target="amqps://" + hostname + "/messages/devicebound",
             auth=auth,
             keep_alive_interval=120,
             transport_type=transport_type,
