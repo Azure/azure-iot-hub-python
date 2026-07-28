@@ -6,4 +6,4 @@
 """This module defines constants for use across the azure-iot-hub package
 """
 
-VERSION = "2.7.0"
+VERSION = "3.0.0b1"
