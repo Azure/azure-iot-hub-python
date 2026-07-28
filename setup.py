@@ -5,7 +5,6 @@
 # --------------------------------------------------------------------------
 
 from setuptools import setup, find_packages
-from io import open  # io.open needed for Python 2 compat
 import re
 
 # azure v0.x is not compatible with this package
@@ -64,23 +63,24 @@ setup(
         "Topic :: Software Development :: Libraries :: Python Modules",
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python",
-        "Programming Language :: Python :: 2",
-        "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.5",
-        "Programming Language :: Python :: 3.6",
-        "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
+        "Programming Language :: Python :: 3.14",
     ],
     install_requires=[
         "msrest>=0.6.21,<1.0.0",
-        # NOTE: Python 2.7, 3.5 support dropped >= 1.4.0
-        "uamqp>=1.2.14,<2.0.0",
         "azure-core>=1.10.0,<2.0.0",
+        # Runtime dependencies of the vendored pyamqp (see src/azure/iot/hub/_pyamqp/VENDOR.md).
+        "certifi>=2017.4.17",
+        "typing_extensions>=4.0.1",
+        "websocket-client>=1.0.0",
     ],
-    python_requires=">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, <4",
+    python_requires=">=3.8",
     packages=find_packages(
         where="src",
         exclude=[

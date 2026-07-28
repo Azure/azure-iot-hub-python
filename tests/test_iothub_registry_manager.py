@@ -9,7 +9,7 @@ from azure.iot.hub.protocol.models import AuthenticationMechanism, DeviceCapabil
 from azure.iot.hub.iothub_registry_manager import IoTHubRegistryManager
 from azure.iot.hub import iothub_amqp_client
 from azure.iot.hub.protocol.iot_hub_gateway_service_ap_is import IotHubGatewayServiceAPIs
-from uamqp import TransportType
+from azure.iot.hub import TransportType
 
 """---Constants---"""
 
@@ -129,12 +129,12 @@ def mock_module_constructor(mocker):
 
 
 @pytest.fixture(scope="function")
-def mock_uamqp_send_message_to_device(mocker):
-    mock_uamqp_send = mocker.patch.object(
+def mock_send_message_to_device(mocker):
+    mock_send = mocker.patch.object(
         iothub_amqp_client.IoTHubAmqpClientSharedAccessKeyAuth,
         "send_message_to_device",
     )
-    return mock_uamqp_send
+    return mock_send
 
 
 @pytest.mark.describe("IoTHubRegistryManager - .from_connection_string()")
@@ -1433,13 +1433,13 @@ class TestInvokeDeviceModuleMethodWithPayloadNone(object):
 class TestSendC2dMessage(object):
     @pytest.mark.it("Test send c2d message")
     def test_send_c2d_message(
-        self, mocker, mock_uamqp_send_message_to_device, iothub_registry_manager
+        self, mocker, mock_send_message_to_device, iothub_registry_manager
     ):
 
         iothub_registry_manager.send_c2d_message(fake_device_id, fake_message_to_send)
 
-        assert mock_uamqp_send_message_to_device.call_count == 1
-        assert mock_uamqp_send_message_to_device.call_args == mocker.call(
+        assert mock_send_message_to_device.call_count == 1
+        assert mock_send_message_to_device.call_args == mocker.call(
             fake_device_id, fake_message_to_send, {}
         )
 
@@ -1448,14 +1448,14 @@ class TestSendC2dMessage(object):
 class TestSendC2dMessageWithProperties(object):
     @pytest.mark.it("Test send c2d message with properties")
     def test_send_c2d_message_with_properties(
-        self, mocker, mock_uamqp_send_message_to_device, iothub_registry_manager
+        self, mocker, mock_send_message_to_device, iothub_registry_manager
     ):
 
         iothub_registry_manager.send_c2d_message(
             fake_device_id, fake_message_to_send, fake_properties
         )
 
-        assert mock_uamqp_send_message_to_device.call_count == 1
-        assert mock_uamqp_send_message_to_device.call_args == mocker.call(
+        assert mock_send_message_to_device.call_count == 1
+        assert mock_send_message_to_device.call_args == mocker.call(
             fake_device_id, fake_message_to_send, fake_properties
         )

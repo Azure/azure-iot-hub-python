@@ -9,12 +9,21 @@ import time
 import hashlib
 import hmac
 from uuid import uuid4
-import six.moves.urllib as urllib
+from urllib import parse as urllib_parse
 from azure.core.credentials import AccessToken
-import uamqp
+
+from ._pyamqp import SendClient
+from ._pyamqp.authentication import JWTTokenAuth
+from ._pyamqp.constants import TransportType
+from ._pyamqp.error import AMQPException
+from ._pyamqp.message import Message, Properties
 
 
 default_sas_expiry = 3600
+
+
+class C2DMessageSendError(Exception):
+    """Raised when a cloud-to-device message fails to send."""
 
 
 class IoTHubAmqpClientBase:
@@ -35,46 +44,47 @@ class IoTHubAmqpClientBase:
 
         :raises: Exception if the Send command is not able to send the message
         """
-        msg_content = message
-        msg_props = uamqp.message.MessageProperties()
-        msg_props.message_id = str(uuid4())
-        msg_props.to = "/devices/{}/messages/devicebound".format(device_id)
-
+        properties_kwargs = {
+            "message_id": str(uuid4()),
+            "to": "/devices/{}/messages/devicebound".format(device_id),
+        }
         app_properties = {}
 
-        # loop through all properties and pull out the custom
-        # properties
         for prop_key, prop_value in app_props.items():
             if prop_key == "contentType":
-                msg_props.content_type = prop_value
+                properties_kwargs["content_type"] = prop_value
             elif prop_key == "contentEncoding":
-                msg_props.content_encoding = prop_value
+                properties_kwargs["content_encoding"] = prop_value
             elif prop_key == "correlationId":
-                msg_props.correlation_id = prop_value
+                properties_kwargs["correlation_id"] = prop_value
             elif prop_key == "expiryTimeUtc":
-                msg_props.absolute_expiry_time = prop_value
+                properties_kwargs["absolute_expiry_time"] = prop_value
             elif prop_key == "messageId":
-                msg_props.message_id = prop_value
+                properties_kwargs["message_id"] = prop_value
             else:
                 app_properties[prop_key] = prop_value
 
-        message = uamqp.Message(
-            msg_content, properties=msg_props, application_properties=app_properties
+        msg_body = message.encode("utf-8") if isinstance(message, str) else message
+        amqp_message = Message(
+            properties=Properties(**properties_kwargs),
+            application_properties=app_properties,
+            data=[msg_body],
         )
-        self.amqp_client.queue_message(message)
-        results = self.amqp_client.send_all_messages(close_on_done=False)
-        if uamqp.constants.MessageState.SendFailed in results:
-            raise Exception("C2D message send failure")
+
+        try:
+            self.amqp_client.send_message(amqp_message)
+        except AMQPException:
+            raise C2DMessageSendError("C2D message send failure")
 
 
 class IoTHubAmqpClientSharedAccessKeyAuth(IoTHubAmqpClientBase):
-    def __init__(self, hostname, shared_access_key_name, shared_access_key, transport_type=uamqp.TransportType.Amqp):
+    def __init__(self, hostname, shared_access_key_name, shared_access_key, transport_type=TransportType.Amqp):
         def get_token():
             expiry = int(time.time() + default_sas_expiry)
             sas = base64.b64decode(shared_access_key)
             string_to_sign = (hostname + "\n" + str(expiry)).encode("utf-8")
             signed_hmac_sha256 = hmac.HMAC(sas, string_to_sign, hashlib.sha256)
-            signature = urllib.parse.quote(base64.b64encode(signed_hmac_sha256.digest()))
+            signature = urllib_parse.quote(base64.b64encode(signed_hmac_sha256.digest()))
             return AccessToken(
                 "SharedAccessSignature sr={}&sig={}&se={}&skn={}".format(
                     hostname, signature, expiry, shared_access_key_name
@@ -82,15 +92,14 @@ class IoTHubAmqpClientSharedAccessKeyAuth(IoTHubAmqpClientBase):
                 expiry,
             )
 
-        auth = uamqp.authentication.JWTTokenAuth(
-            audience="https://" + hostname,
+        auth = JWTTokenAuth(
             uri="https://" + hostname,
+            audience="https://" + hostname,
             get_token=get_token,
             token_type=b"servicebus.windows.net:sastoken",
-            transport_type=transport_type,
         )
-        auth.update_token()
-        self.amqp_client = uamqp.SendClient(
+        self.amqp_client = SendClient(
+            hostname=hostname,
             target="amqps://" + hostname + "/messages/devicebound",
             auth=auth,
             keep_alive_interval=120,
@@ -100,19 +109,22 @@ class IoTHubAmqpClientSharedAccessKeyAuth(IoTHubAmqpClientBase):
 
 class IoTHubAmqpClientTokenAuth(IoTHubAmqpClientBase):
     def __init__(
-        self, hostname, token_credential, token_scope="https://iothubs.azure.net/.default", transport_type=uamqp.TransportType.Amqp
+        self, hostname, token_credential, token_scope="https://iothubs.azure.net/.default", transport_type=TransportType.Amqp
     ):
         def get_token():
             result = token_credential.get_token(token_scope)
             return AccessToken("Bearer " + result.token, result.expires_on)
 
-        auth = uamqp.authentication.JWTTokenAuth(
-            audience=token_scope,
+        auth = JWTTokenAuth(
             uri="https://" + hostname,
+            audience=token_scope,
             get_token=get_token,
             token_type=b"bearer",
-            transport_type=transport_type
         )
-        auth.update_token()
-        target = "amqps://" + hostname + "/messages/devicebound"
-        self.amqp_client = uamqp.SendClient(target=target, auth=auth, keep_alive_interval=120, transport_type=transport_type)
+        self.amqp_client = SendClient(
+            hostname=hostname,
+            target="amqps://" + hostname + "/messages/devicebound",
+            auth=auth,
+            keep_alive_interval=120,
+            transport_type=transport_type,
+        )
