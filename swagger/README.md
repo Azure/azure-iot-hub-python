@@ -24,7 +24,7 @@ input-file: ../service.json
 output-folder: ../src/azure/iot/hub/protocol
 namespace: azure.iot.hub.protocol
 package-name: azure-iot-hub
-package-version: 3.0.0b1
+package-version: 3.0.0b2
 license-header: MICROSOFT_MIT_NO_VERSION
 clear-output-folder: true
 no-namespace-folders: true
