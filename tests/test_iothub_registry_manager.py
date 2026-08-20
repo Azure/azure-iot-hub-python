@@ -8,7 +8,7 @@ import pytest
 from azure.iot.hub.protocol.models import AuthenticationMechanism, DeviceCapabilities
 from azure.iot.hub.iothub_registry_manager import IoTHubRegistryManager
 from azure.iot.hub import iothub_amqp_client
-from azure.iot.hub.protocol.iot_hub_gateway_service_ap_is import IotHubGatewayServiceAPIs
+from azure.iot.hub.protocol._iot_hub_gateway_service_apis import IotHubGatewayServiceAPIs
 from azure.iot.hub import TransportType
 
 """---Constants---"""
@@ -69,7 +69,7 @@ fake_message_to_send = "fake_message_to_send"
 @pytest.fixture(scope="function", autouse=True)
 def mock_devices_operations(mocker):
     mock_devices_operations_init = mocker.patch(
-        "azure.iot.hub.protocol.iot_hub_gateway_service_ap_is.DevicesOperations"
+        "azure.iot.hub.protocol._iot_hub_gateway_service_apis.DevicesOperations"
     )
     return mock_devices_operations_init.return_value
 
@@ -77,7 +77,7 @@ def mock_devices_operations(mocker):
 @pytest.fixture(scope="function", autouse=True)
 def mock_modules_operations(mocker):
     mock_modules_operations_init = mocker.patch(
-        "azure.iot.hub.protocol.iot_hub_gateway_service_ap_is.ModulesOperations"
+        "azure.iot.hub.protocol._iot_hub_gateway_service_apis.ModulesOperations"
     )
     return mock_modules_operations_init.return_value
 
@@ -85,7 +85,7 @@ def mock_modules_operations(mocker):
 @pytest.fixture(scope="function", autouse=True)
 def mock_statistics_operations(mocker):
     mock_statistics_operations_init = mocker.patch(
-        "azure.iot.hub.protocol.iot_hub_gateway_service_ap_is.StatisticsOperations"
+        "azure.iot.hub.protocol._iot_hub_gateway_service_apis.StatisticsOperations"
     )
     return mock_statistics_operations_init.return_value
 
@@ -93,7 +93,7 @@ def mock_statistics_operations(mocker):
 @pytest.fixture(scope="function", autouse=True)
 def mock_bulk_registry_operations(mocker):
     mock_bulk_registry_operations_init = mocker.patch(
-        "azure.iot.hub.protocol.iot_hub_gateway_service_ap_is.BulkRegistryOperations"
+        "azure.iot.hub.protocol._iot_hub_gateway_service_apis.BulkRegistryOperations"
     )
     return mock_bulk_registry_operations_init.return_value
 
@@ -101,7 +101,7 @@ def mock_bulk_registry_operations(mocker):
 @pytest.fixture(scope="function", autouse=True)
 def mock_query_operations(mocker):
     mock_query_operations_init = mocker.patch(
-        "azure.iot.hub.protocol.iot_hub_gateway_service_ap_is.QueryOperations"
+        "azure.iot.hub.protocol._iot_hub_gateway_service_apis.QueryOperations"
     )
     return mock_query_operations_init.return_value
 
@@ -171,15 +171,15 @@ class TestFromConnectionString:
 
         client = IoTHubRegistryManager.from_connection_string(connection_string=connection_string)
 
-        assert repr(client.protocol.config.credentials) == connection_string
+        assert repr(client.protocol._config.authentication_policy) == connection_string
         assert (
-            client.protocol.config.base_url
-            == "https://" + client.protocol.config.credentials["HostName"]
+            client.protocol._client._base_url
+            == "https://" + client.protocol._config.authentication_policy["HostName"]
         )
         assert amqp_client_init_mock.call_args == mocker.call(
-            client.protocol.config.credentials["HostName"],
-            client.protocol.config.credentials["SharedAccessKeyName"],
-            client.protocol.config.credentials["SharedAccessKey"],
+            client.protocol._config.authentication_policy["HostName"],
+            client.protocol._config.authentication_policy["SharedAccessKeyName"],
+            client.protocol._config.authentication_policy["SharedAccessKey"],
             TransportType.Amqp,
         )
 
@@ -215,15 +215,15 @@ class TestFromConnectionString:
 
         client = IoTHubRegistryManager.from_connection_string(connection_string=connection_string, transport_type=TransportType.AmqpOverWebsocket)
 
-        assert repr(client.protocol.config.credentials) == connection_string
+        assert repr(client.protocol._config.authentication_policy) == connection_string
         assert (
-            client.protocol.config.base_url
-            == "https://" + client.protocol.config.credentials["HostName"]
+            client.protocol._client._base_url
+            == "https://" + client.protocol._config.authentication_policy["HostName"]
         )
         assert amqp_client_init_mock.call_args == mocker.call(
-            client.protocol.config.credentials["HostName"],
-            client.protocol.config.credentials["SharedAccessKeyName"],
-            client.protocol.config.credentials["SharedAccessKey"],
+            client.protocol._config.authentication_policy["HostName"],
+            client.protocol._config.authentication_policy["SharedAccessKeyName"],
+            client.protocol._config.authentication_policy["SharedAccessKey"],
             TransportType.AmqpOverWebsocket,
         )
 
@@ -287,10 +287,10 @@ class TestFromTokenCredential:
         )
 
         assert (
-            client.protocol.config.credentials._policy._credential
+            client.protocol._config.authentication_policy._credential
             == mock_azure_identity_TokenCredential
         )
-        assert client.protocol.config.base_url == "https://" + fake_hostname
+        assert client.protocol._client._base_url == "https://" + fake_hostname
         assert amqp_client_init_mock.call_args == mocker.call(
             fake_hostname, mock_azure_identity_TokenCredential, transport_type=TransportType.Amqp
         )
@@ -303,10 +303,10 @@ class TestFromTokenCredential:
         )
 
         assert (
-            client.protocol.config.credentials._policy._credential
+            client.protocol._config.authentication_policy._credential
             == mock_azure_identity_TokenCredential
         )
-        assert client.protocol.config.base_url == "https://" + fake_hostname
+        assert client.protocol._client._base_url == "https://" + fake_hostname
         assert amqp_client_init_mock.call_args == mocker.call(
             fake_hostname, mock_azure_identity_TokenCredential, transport_type=TransportType.AmqpOverWebsocket
         )
@@ -1269,9 +1269,9 @@ class TestQueryIoTHub(object):
     def test_query_iot_hub(self, mocker, mock_query_operations, iothub_registry_manager):
         iothub_registry_manager.query_iot_hub(fake_query_specification)
         assert mock_query_operations.get_twins.call_count == 1
-        assert mock_query_operations.get_twins.call_args == mocker.call(
-            fake_query_specification, None, None, None, True
-        )
+        args, kwargs = mock_query_operations.get_twins.call_args
+        assert args == (fake_query_specification, None, None)
+        assert callable(kwargs.get("cls"))
 
 
 @pytest.mark.describe("IoTHubRegistryManager - .query_iot_hub(continuation_token)")
@@ -1281,9 +1281,9 @@ class TestQueryIoTHubWithContinuationToken(object):
         continuation_token = 42
         iothub_registry_manager.query_iot_hub(fake_query_specification, continuation_token)
         assert mock_query_operations.get_twins.call_count == 1
-        assert mock_query_operations.get_twins.call_args == mocker.call(
-            fake_query_specification, continuation_token, None, None, True
-        )
+        args, kwargs = mock_query_operations.get_twins.call_args
+        assert args == (fake_query_specification, continuation_token, None)
+        assert callable(kwargs.get("cls"))
 
 
 @pytest.mark.describe("IoTHubRegistryManager - .query_iot_hub(continuation_token, max_item_count)")
@@ -1296,9 +1296,9 @@ class TestQueryIoTHubWithContinuationTokenAndMaxItermCount(object):
             fake_query_specification, continuation_token, max_item_count
         )
         assert mock_query_operations.get_twins.call_count == 1
-        assert mock_query_operations.get_twins.call_args == mocker.call(
-            fake_query_specification, continuation_token, max_item_count, None, True
-        )
+        args, kwargs = mock_query_operations.get_twins.call_args
+        assert args == (fake_query_specification, continuation_token, max_item_count)
+        assert callable(kwargs.get("cls"))
 
 
 @pytest.mark.describe("IoTHubRegistryManager - .get_twin()")

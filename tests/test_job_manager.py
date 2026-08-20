@@ -7,7 +7,7 @@
 import pytest
 from azure.iot.hub.iothub_job_manager import IoTHubJobManager
 from azure.iot.hub.auth import ConnectionStringAuthentication
-from azure.iot.hub.protocol.iot_hub_gateway_service_ap_is import IotHubGatewayServiceAPIs
+from azure.iot.hub.protocol._iot_hub_gateway_service_apis import IotHubGatewayServiceAPIs
 
 """---Constants---"""
 
@@ -28,7 +28,7 @@ fake_job_status = "fake_job_status"
 @pytest.fixture(scope="function", autouse=True)
 def mock_job_client_operations(mocker):
     mock_job_client_operations_init = mocker.patch(
-        "azure.iot.hub.protocol.iot_hub_gateway_service_ap_is.JobsOperations"
+        "azure.iot.hub.protocol._iot_hub_gateway_service_apis.JobsOperations"
     )
     return mock_job_client_operations_init.return_value
 
@@ -82,8 +82,8 @@ class TestFromConnectionString:
         client = IoTHubJobManager.from_connection_string(connection_string=connection_string)
 
         assert repr(client.auth) == connection_string
-        assert client.protocol.config.base_url == "https://" + client.auth["HostName"]
-        assert client.protocol.config.credentials == client.auth
+        assert client.protocol._client._base_url == "https://" + client.auth["HostName"]
+        assert client.protocol._config.authentication_policy == client.auth
 
     @pytest.mark.it("Sets the auth and protocol attributes")
     def test_instantiates_auth_and_protocol_attributes(self, iothub_job_manager):
@@ -152,9 +152,9 @@ class TestFromTokenCredential:
             fake_hostname, mock_azure_identity_TokenCredential
         )
 
-        assert client.auth._policy._credential == mock_azure_identity_TokenCredential
-        assert client.protocol.config.base_url == "https://" + fake_hostname
-        assert client.protocol.config.credentials == client.auth
+        assert client.auth._credential == mock_azure_identity_TokenCredential
+        assert client.protocol._client._base_url == "https://" + fake_hostname
+        assert client.protocol._config.authentication_policy == client.auth
 
 
 @pytest.mark.describe("IoTHubJobManager - .create_import_export_job()")

@@ -5,7 +5,7 @@
 # --------------------------------------------------------------------------
 
 from .auth import ConnectionStringAuthentication, AzureIdentityCredentialAdapter
-from .protocol.iot_hub_gateway_service_ap_is import IotHubGatewayServiceAPIs as protocol_client
+from .protocol import IotHubGatewayServiceAPIs as protocol_client
 
 
 class IoTHubConfigurationManager(object):
@@ -31,10 +31,14 @@ class IoTHubConfigurationManager(object):
         """
         if connection_string is not None:
             self.auth = ConnectionStringAuthentication(connection_string)
-            self.protocol = protocol_client(self.auth, "https://" + self.auth["HostName"])
+            self.protocol = protocol_client(
+                "https://" + self.auth["HostName"], authentication_policy=self.auth
+            )
         else:
             self.auth = auth
-            self.protocol = protocol_client(self.auth, "https://" + host)
+            self.protocol = protocol_client(
+                "https://" + host, authentication_policy=self.auth
+            )
 
     @classmethod
     def from_connection_string(cls, connection_string):
@@ -74,7 +78,7 @@ class IoTHubConfigurationManager(object):
 
         :param str configuration_id: The id of the configuration.
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: The Configuration object.
@@ -87,7 +91,7 @@ class IoTHubConfigurationManager(object):
         :param str configuration_id: The id of the configuration.
         :param Configuration configuration: The configuration to create.
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: Configuration object containing the created configuration.
@@ -102,7 +106,7 @@ class IoTHubConfigurationManager(object):
         :param Configuration configuration: The configuration contains the updated configuration.
         :param str etag: The etag (if_match) value to use for the update operation.
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: Configuration object containing the updated configuration.
@@ -116,7 +120,7 @@ class IoTHubConfigurationManager(object):
         :param Configuration configuration: The configuration to create.
         :param str etag: The etag (if_match) value to use for the delete operation.
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: Configuration object containing the updated configuration.
@@ -132,7 +136,7 @@ class IoTHubConfigurationManager(object):
 
         :param int max_count: The maximum number of configurations requested.
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: The list[Configuration] object.
@@ -145,7 +149,7 @@ class IoTHubConfigurationManager(object):
 
         :param ConfigurationQueriesTestInput configuration_queries_test_input: The queries test input.
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: The ConfigurationQueriesTestResponse object.
@@ -158,7 +162,7 @@ class IoTHubConfigurationManager(object):
 
         :param ConfigurationContent configuration_content: The name (Id) of the edge device.
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: An object.

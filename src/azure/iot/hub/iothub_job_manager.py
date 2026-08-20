@@ -5,7 +5,7 @@
 # --------------------------------------------------------------------------
 
 from .auth import ConnectionStringAuthentication, AzureIdentityCredentialAdapter
-from .protocol.iot_hub_gateway_service_ap_is import IotHubGatewayServiceAPIs as protocol_client
+from .protocol import IotHubGatewayServiceAPIs as protocol_client
 
 
 class IoTHubJobManager(object):
@@ -31,10 +31,14 @@ class IoTHubJobManager(object):
         """
         if connection_string is not None:
             self.auth = ConnectionStringAuthentication(connection_string)
-            self.protocol = protocol_client(self.auth, "https://" + self.auth["HostName"])
+            self.protocol = protocol_client(
+                "https://" + self.auth["HostName"], authentication_policy=self.auth
+            )
         else:
             self.auth = auth
-            self.protocol = protocol_client(self.auth, "https://" + host)
+            self.protocol = protocol_client(
+                "https://" + host, authentication_policy=self.auth
+            )
 
     @classmethod
     def from_connection_string(cls, connection_string):
@@ -75,7 +79,7 @@ class IoTHubJobManager(object):
         :param job_properties: Specifies the job specification.
         :type job_properties: :class:`azure.iot.hub.models.JobProperties`
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: JobProperties object containing the created job.
@@ -86,7 +90,7 @@ class IoTHubJobManager(object):
     def get_import_export_jobs(self):
         """Retrieves the status of all import/export jobs on an IoTHub.
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: The list[job_properties] object.
@@ -99,7 +103,7 @@ class IoTHubJobManager(object):
 
         :param str job_id: The ID of the job.
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: The JobProperties object containing the requested job.
@@ -112,7 +116,7 @@ class IoTHubJobManager(object):
 
         :param str job_id: The ID of the job.
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: Object.
@@ -126,7 +130,7 @@ class IoTHubJobManager(object):
         :param job_request: Specifies the job.
         :type job_request: :class:`azure.iot.hub.models.JobRequest`
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: JobResponse object containing the created job.
@@ -139,7 +143,7 @@ class IoTHubJobManager(object):
 
         :param str job_id: The ID of the job.
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: The JobResponse object containing the requested details.
@@ -152,7 +156,7 @@ class IoTHubJobManager(object):
 
         :param str job_id: The ID of the job.
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: JobResponse object containing the cancelled job.
@@ -166,7 +170,7 @@ class IoTHubJobManager(object):
         :param str job_type: The type of the jobs.
         :param str job_status: The status of the jobs.
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: QueryResult object containing the jobs.

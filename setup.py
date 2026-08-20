@@ -71,8 +71,7 @@ setup(
         "Programming Language :: Python :: 3.14",
     ],
     install_requires=[
-        "msrest>=0.6.21,<1.0.0",
-        "azure-core>=1.10.0,<2.0.0",
+        "azure-core>=1.29.0,<2.0.0",
         # Runtime dependencies of the vendored pyamqp (see src/azure/iot/hub/_pyamqp/VENDOR.md).
         "certifi>=2017.4.17",
         "typing_extensions>=4.0.1",

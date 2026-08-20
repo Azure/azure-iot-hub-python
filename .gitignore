@@ -125,3 +125,7 @@ demoCA/
 
 # e2e
 **/_e2e_settings.json
+
+# AutoRest codegen scratch (local install of @autorest/core, @autorest/python)
+.autorest/
+node_modules/

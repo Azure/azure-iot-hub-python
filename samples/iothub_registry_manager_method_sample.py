@@ -5,7 +5,7 @@
 # --------------------------------------------------------------------------
 
 import os
-import msrest
+from azure.core.exceptions import HttpResponseError
 from azure.iot.hub import IoTHubRegistryManager
 from azure.iot.hub.models import CloudToDeviceMethod
 
@@ -26,8 +26,8 @@ try:
     # Set registry manager object to `None` so all open files get closed
     iothub_registry_manager = None
 
-except msrest.exceptions.HttpOperationError as ex:
-    print("HttpOperationError error {0}".format(ex.response.text))
+except HttpResponseError as ex:
+    print("HttpResponseError error {0}".format(ex))
 except Exception as ex:
     print("Unexpected error {0}".format(ex))
 except KeyboardInterrupt:
