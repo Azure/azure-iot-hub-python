@@ -5,7 +5,7 @@
 # --------------------------------------------------------------------------
 
 import os
-import msrest
+from azure.core.exceptions import HttpResponseError
 from azure.iot.hub import DigitalTwinClient
 
 
@@ -30,8 +30,8 @@ try:
     else:
         print("No invoke_command_result found")
 
-except msrest.exceptions.HttpOperationError as ex:
-    print("HttpOperationError error {0}".format(ex.response.text))
+except HttpResponseError as ex:
+    print("HttpResponseError error {0}".format(ex))
 except Exception as exc:
     print("Unexpected error {0}".format(exc))
 except KeyboardInterrupt:

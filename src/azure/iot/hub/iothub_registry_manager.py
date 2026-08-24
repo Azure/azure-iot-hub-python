@@ -5,7 +5,7 @@
 # --------------------------------------------------------------------------
 from . import iothub_amqp_client
 from .auth import ConnectionStringAuthentication, AzureIdentityCredentialAdapter
-from .protocol.iot_hub_gateway_service_ap_is import IotHubGatewayServiceAPIs as protocol_client
+from .protocol import IotHubGatewayServiceAPIs as protocol_client
 from .protocol.models import (
     Device,
     Module,
@@ -75,19 +75,22 @@ class IoTHubRegistryManager(object):
         """
         self.amqp_svc_client = None
         if connection_string is not None:
-            conn_string_auth = ConnectionStringAuthentication(connection_string)
+            self.auth = ConnectionStringAuthentication(connection_string)
             self.protocol = protocol_client(
-                conn_string_auth, "https://" + conn_string_auth["HostName"]
+                "https://" + self.auth["HostName"],
+                authentication_policy=self.auth,
             )
             self.amqp_svc_client = iothub_amqp_client.IoTHubAmqpClientSharedAccessKeyAuth(
-                conn_string_auth["HostName"],
-                conn_string_auth["SharedAccessKeyName"],
-                conn_string_auth["SharedAccessKey"],
+                self.auth["HostName"],
+                self.auth["SharedAccessKeyName"],
+                self.auth["SharedAccessKey"],
                 transport_type,
             )
         else:
+            self.auth = AzureIdentityCredentialAdapter(token_credential)
             self.protocol = protocol_client(
-                AzureIdentityCredentialAdapter(token_credential), "https://" + host
+                "https://" + host,
+                authentication_policy=self.auth,
             )
             self.amqp_svc_client = iothub_amqp_client.IoTHubAmqpClientTokenAuth(
                 host, token_credential, transport_type=transport_type
@@ -164,7 +167,7 @@ class IoTHubRegistryManager(object):
             For edge devices, the value to set a parent edge device can be retrieved from the parent edge device's device_scope property.
             For leaf devices, this could be set to the same value as device_scope or left for the service to copy over.
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: Device object containing the created device.
@@ -214,7 +217,7 @@ class IoTHubRegistryManager(object):
             For edge devices, the value to set a parent edge device can be retrieved from the parent edge device's device_scope property.
             For leaf devices, this could be set to the same value as device_scope or left for the service to copy over.
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: Device object containing the created device.
@@ -264,7 +267,7 @@ class IoTHubRegistryManager(object):
             For edge devices, the value to set a parent edge device can be retrieved from the parent edge device's device_scope property.
             For leaf devices, this could be set to the same value as device_scope or left for the service to copy over.
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: Device object containing the created device.
@@ -314,7 +317,7 @@ class IoTHubRegistryManager(object):
             For edge devices, the value to set a parent edge device can be retrieved from the parent edge device's device_scope property.
             For leaf devices, this could be set to the same value as device_scope or left for the service to copy over.
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: The updated Device object containing the created device.
@@ -371,7 +374,7 @@ class IoTHubRegistryManager(object):
             For edge devices, the value to set a parent edge device can be retrieved from the parent edge device's device_scope property.
             For leaf devices, this could be set to the same value as device_scope or left for the service to copy over.
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: The updated Device object containing the created device.
@@ -428,7 +431,7 @@ class IoTHubRegistryManager(object):
             For edge devices, the value to set a parent edge device can be retrieved from the parent edge device's device_scope property.
             For leaf devices, this could be set to the same value as device_scope or left for the service to copy over.
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: The updated Device object containing the created device.
@@ -459,7 +462,7 @@ class IoTHubRegistryManager(object):
 
         :param str device_id: The name (Id) of the device.
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: The Device object containing the requested device.
@@ -472,7 +475,7 @@ class IoTHubRegistryManager(object):
         :param str device_id: The name (Id) of the device.
         :param str etag: The etag (if_match) value to use for the delete operation.
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: None.
@@ -491,7 +494,7 @@ class IoTHubRegistryManager(object):
         :param str primary_key: Primary authentication key.
         :param str secondary_key: Secondary authentication key.
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: Module object containing the created module.
@@ -519,7 +522,7 @@ class IoTHubRegistryManager(object):
         :param str primary_thumbprint: Primary X509 thumbprint.
         :param str secondary_thumbprint: Secondary X509 thumbprint.
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: Module object containing the created module.
@@ -547,7 +550,7 @@ class IoTHubRegistryManager(object):
         :param str module_id: The name (Id) of the module.
         :param str managed_by: The name of the manager device (edge).
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: Module object containing the created module.
@@ -574,7 +577,7 @@ class IoTHubRegistryManager(object):
         :param str primary_key: Primary authentication key.
         :param str secondary_key: Secondary authentication key.
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: The updated Module object containing the created module.
@@ -608,7 +611,7 @@ class IoTHubRegistryManager(object):
         :param str primary_thumbprint: Primary X509 thumbprint.
         :param str secondary_thumbprint: Secondary X509 thumbprint.
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: The updated Module object containing the created module.
@@ -642,7 +645,7 @@ class IoTHubRegistryManager(object):
         :param str managed_by: The name of the manager device (edge).
         :param str etag: The etag (if_match) value to use for the update operation.
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: The updated Module object containing the created module.
@@ -669,7 +672,7 @@ class IoTHubRegistryManager(object):
         :param str device_id: The name (Id) of the device.
         :param str module_id: The name (Id) of the module.
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: The Module object containing the requested module.
@@ -681,7 +684,7 @@ class IoTHubRegistryManager(object):
 
         :param str device_id: The name (Id) of the device.
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: The list[Module] containing all the modules on the device.
@@ -695,7 +698,7 @@ class IoTHubRegistryManager(object):
         :param str module_id: The name (Id) of the module.
         :param str etag: The etag (if_match) value to use for the delete operation.
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: None.
@@ -708,7 +711,7 @@ class IoTHubRegistryManager(object):
     def get_service_statistics(self):
         """Retrieves the IoTHub service statistics.
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: The ServiceStatistics object.
@@ -718,7 +721,7 @@ class IoTHubRegistryManager(object):
     def get_device_registry_statistics(self):
         """Retrieves the IoTHub device registry statistics.
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: The RegistryStatistics object.
@@ -738,7 +741,7 @@ class IoTHubRegistryManager(object):
            of device identities that are returned. Any value outside the range of
            1-1000 is considered to be 1000
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: List of device info.
@@ -759,7 +762,7 @@ class IoTHubRegistryManager(object):
 
         :param list[ExportImportDevice] devices: The list of device objects to operate on.
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: The BulkRegistryOperationResult object.
@@ -777,20 +780,26 @@ class IoTHubRegistryManager(object):
         :param str continuation_token: Continuation token for paging
         :param str max_item_count: Maximum number of requested device twins
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: The QueryResult object.
         """
-        raw_response = self.protocol.query.get_twins(
-            query_specification, continuation_token, max_item_count, None, True
+        response_headers = {}
+
+        def _capture_headers(pipeline_response, deserialized, headers):
+            response_headers.update(headers or {})
+            return deserialized
+
+        items = self.protocol.query.get_twins(
+            query_specification, continuation_token, max_item_count, cls=_capture_headers
         )
 
         queryResult = QueryResult()
-        if raw_response.headers:
-            queryResult.type = raw_response.headers["x-ms-item-type"]
-            queryResult.continuation_token = raw_response.headers["x-ms-continuation"]
-        queryResult.items = raw_response.output
+        if response_headers:
+            queryResult.type = response_headers.get("x-ms-item-type")
+            queryResult.continuation_token = response_headers.get("x-ms-continuation")
+        queryResult.items = items
 
         return queryResult
 
@@ -799,7 +808,7 @@ class IoTHubRegistryManager(object):
 
         :param str device_id: The name (Id) of the device.
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: The Twin object.
@@ -813,7 +822,7 @@ class IoTHubRegistryManager(object):
         :param Twin device_twin: The twin info of the device.
         :param str etag: The etag (if_match) value to use for the replace operation.
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: The Twin object.
@@ -830,7 +839,7 @@ class IoTHubRegistryManager(object):
         :param Twin device_twin: The twin info of the device.
         :param str etag: The etag (if_match) value to use for the update operation.
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: The Twin object.
@@ -846,7 +855,7 @@ class IoTHubRegistryManager(object):
         :param str device_id: The name (Id) of the device.
         :param str module_id: The name (Id) of the module.
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: The Twin object.
@@ -861,7 +870,7 @@ class IoTHubRegistryManager(object):
         :param Twin module_twin: The twin info of the module.
         :param str etag: The etag (if_match) value to use for the replace operation.
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: The Twin object.
@@ -881,7 +890,7 @@ class IoTHubRegistryManager(object):
         :param Twin module_twin: The twin info of the module.
         :param str etag: The etag (if_match) value to use for the update operation.
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: The Twin object.
@@ -899,7 +908,7 @@ class IoTHubRegistryManager(object):
         :param str device_id: The name (Id) of the device.
         :param CloudToDeviceMethod direct_method_request: The method request.
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: The CloudToDeviceMethodResult object.
@@ -916,7 +925,7 @@ class IoTHubRegistryManager(object):
         :param str module_id: The name (Id) of the module.
         :param CloudToDeviceMethod direct_method_request: The method request.
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: The CloudToDeviceMethodResult object.

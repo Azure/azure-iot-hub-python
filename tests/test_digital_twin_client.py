@@ -7,7 +7,7 @@
 import pytest
 from azure.iot.hub.digital_twin_client import DigitalTwinClient
 from azure.iot.hub.auth import ConnectionStringAuthentication
-from azure.iot.hub.protocol.iot_hub_gateway_service_ap_is import IotHubGatewayServiceAPIs
+from azure.iot.hub.protocol._iot_hub_gateway_service_apis import IotHubGatewayServiceAPIs
 
 """---Constants---"""
 
@@ -32,7 +32,7 @@ fake_resp_timeout = 72
 @pytest.fixture(scope="function", autouse=True)
 def mock_digital_twin_operations(mocker):
     mock_digital_twin_operations_init = mocker.patch(
-        "azure.iot.hub.protocol.iot_hub_gateway_service_ap_is.DigitalTwinOperations"
+        "azure.iot.hub.protocol._iot_hub_gateway_service_apis.DigitalTwinOperations"
     )
     return mock_digital_twin_operations_init.return_value
 
@@ -86,8 +86,8 @@ class TestFromConnectionString:
         client = DigitalTwinClient.from_connection_string(connection_string=connection_string)
 
         assert repr(client.auth) == connection_string
-        assert client.protocol.config.base_url == "https://" + client.auth["HostName"]
-        assert client.protocol.config.credentials == client.auth
+        assert client.protocol._client._base_url == "https://" + client.auth["HostName"]
+        assert client.protocol._config.authentication_policy == client.auth
 
     @pytest.mark.it("Sets the auth and protocol attributes")
     def test_instantiates_auth_and_protocol_attributes(self, digital_twin_client):
@@ -156,9 +156,9 @@ class TestFromTokenCredential:
             fake_hostname, mock_azure_identity_TokenCredential
         )
 
-        assert client.auth._policy._credential == mock_azure_identity_TokenCredential
-        assert client.protocol.config.base_url == "https://" + fake_hostname
-        assert client.protocol.config.credentials == client.auth
+        assert client.auth._credential == mock_azure_identity_TokenCredential
+        assert client.protocol._client._base_url == "https://" + fake_hostname
+        assert client.protocol._config.authentication_policy == client.auth
 
 
 @pytest.mark.describe("DigitalTwinClient - .get_digital_twin()")

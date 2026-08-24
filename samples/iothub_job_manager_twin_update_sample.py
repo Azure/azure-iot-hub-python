@@ -8,8 +8,8 @@ import os
 import datetime
 import time
 import uuid
-import msrest
 import pprint
+from azure.core.exceptions import HttpResponseError
 from azure.iot.hub import IoTHubJobManager
 from azure.iot.hub.models import JobRequest, Twin, TwinProperties
 
@@ -50,8 +50,8 @@ try:
             break
         time.sleep(5)
 
-except msrest.exceptions.HttpOperationError as ex:
-    print("HttpOperationError error {0}".format(ex.response.text))
+except HttpResponseError as ex:
+    print("HttpResponseError error {0}".format(ex))
 except Exception as ex:
     print("Unexpected error {0}".format(ex))
 except KeyboardInterrupt:

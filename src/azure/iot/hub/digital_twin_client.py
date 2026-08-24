@@ -4,7 +4,7 @@
 # license information.
 # --------------------------------------------------------------------------
 from .auth import ConnectionStringAuthentication, AzureIdentityCredentialAdapter
-from .protocol.iot_hub_gateway_service_ap_is import IotHubGatewayServiceAPIs as protocol_client
+from .protocol import IotHubGatewayServiceAPIs as protocol_client
 
 
 class DigitalTwinClient(object):
@@ -30,10 +30,14 @@ class DigitalTwinClient(object):
         """
         if connection_string is not None:
             self.auth = ConnectionStringAuthentication(connection_string)
-            self.protocol = protocol_client(self.auth, "https://" + self.auth["HostName"])
+            self.protocol = protocol_client(
+                "https://" + self.auth["HostName"], authentication_policy=self.auth
+            )
         else:
             self.auth = auth
-            self.protocol = protocol_client(self.auth, "https://" + host)
+            self.protocol = protocol_client(
+                "https://" + host, authentication_policy=self.auth
+            )
 
     @classmethod
     def from_connection_string(cls, connection_string):
@@ -72,7 +76,7 @@ class DigitalTwinClient(object):
         """Retrieve the Digital Twin of a given device.
         :param str digital_twin__id: The digital twin Id of the given device.
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: The return object containing the Digital Twin.
@@ -86,7 +90,7 @@ class DigitalTwinClient(object):
         :param list[object]: The json-patch object to update the Digital Twin.
         :param str etag: The etag (if_match) value to use for the update operation.
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: The return object containing the updated Digital Twin.
@@ -115,7 +119,7 @@ class DigitalTwinClient(object):
         :param int response_timeout_in_seconds: Maximum interval of time, in seconds, that the digital twin command will wait for the response. The value must be within 5-300.
         :type response_timeout_in_seconds: int
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: The result of the invoked command.
@@ -145,7 +149,7 @@ class DigitalTwinClient(object):
         :param int connect_timeout_in_seconds: Maximum interval of time, in seconds, that the digital twin command will wait for the answer.
         :param int response_timeout_in_seconds: Maximum interval of time, in seconds, that the digital twin command will wait for the response. The value must be within 5-300.
 
-        :raises: `HttpOperationError<msrest.exceptions.HttpOperationError>`
+        :raises: `HttpResponseError<azure.core.exceptions.HttpResponseError>`
             if the HTTP response status is not in [200].
 
         :returns: The result of the invoked command.
