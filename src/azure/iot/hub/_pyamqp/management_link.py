@@ -27,6 +27,7 @@ from .constants import (
 )
 from .error import AMQPException, ErrorCondition
 from .message import Properties, _MessageDelivery
+from .outcomes import Accepted
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -137,7 +138,7 @@ class ManagementLink(object):  # pylint:disable=too-many-instance-attributes
             # All state transitions shall be ignored.
             return
 
-    def _on_message_received(self, _, message):
+    def _on_message_received(self, transfer_frame, message):
         message_properties = message.properties
         correlation_id = message_properties[5]
         response_detail = message.application_properties
@@ -161,6 +162,14 @@ class ManagementLink(object):  # pylint:disable=too-many-instance-attributes
             )
         with self.lock:
             self._pending_operations.remove(to_remove_operation)
+        if not transfer_frame[4]:
+            # Settle the response delivery even when authentication was rejected.
+            self._response_link.send_disposition(
+                first_delivery_id=transfer_frame[1],
+                delivery_tag=transfer_frame[2],
+                settled=True,
+                delivery_state=Accepted(),
+            )
 
     def _on_send_complete(self, message_delivery, reason, state):  # todo: reason is never used, should check spec
         if reason == LinkDeliverySettleReason.DISPOSITION_RECEIVED and SEND_DISPOSITION_REJECT in state:

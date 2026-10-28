@@ -9,8 +9,13 @@ import hashlib
 import pytest
 import hmac
 from azure.core.credentials import AccessToken
-from azure.iot.hub._pyamqp.constants import TransportType
+from azure.iot.hub._pyamqp.constants import ManagementExecuteOperationResult, Role, TransportType
 from azure.iot.hub._pyamqp.error import AMQPException, ErrorCondition
+from azure.iot.hub._pyamqp.management_link import ManagementLink, PendingManagementOperation
+from azure.iot.hub._pyamqp.message import Message, Properties
+from azure.iot.hub._pyamqp.outcomes import Accepted
+from azure.iot.hub._pyamqp.performatives import TransferFrame
+from azure.iot.hub._pyamqp.receiver import ReceiverLink
 from azure.iot.hub.iothub_amqp_client import (
     C2DMessageSendError,
     IoTHubAmqpClientSharedAccessKeyAuth,
@@ -360,3 +365,70 @@ class TestIoTHubAmqpClientTokenAuthDisconnectSync(
     IoTHubAmqpClientTokenAuthTestConfig, SharedIotHubAmqpClientDisconnectSyncTests
 ):
     pass
+
+
+@pytest.mark.describe("CBS response settlement")
+class TestCbsResponseSettlement:
+    @pytest.mark.it("Acknowledges unsettled CBS responses without changing authentication results")
+    @pytest.mark.parametrize("settled", [False, None, True])
+    @pytest.mark.parametrize(
+        "status_code, expected_result",
+        [
+            (200, ManagementExecuteOperationResult.OK),
+            (401, ManagementExecuteOperationResult.FAILED_BAD_STATUS),
+        ],
+    )
+    def test_response_settlement(self, mocker, settled, status_code, expected_result):
+        session = mocker.MagicMock()
+
+        def create_receiver(endpoint, **kwargs):
+            return ReceiverLink(session, 0, endpoint, network_trace_params={}, **kwargs)
+
+        session.create_receiver_link.side_effect = create_receiver
+        management = ManagementLink(
+            session,
+            "$cbs",
+            status_code_field=b"status-code",
+            status_description_field=b"status-description",
+        )
+        decoder = mocker.patch("azure.iot.hub._pyamqp.receiver.decode_payload")
+
+        for delivery_id in (0, 1):
+            session._outgoing_disposition.reset_mock()
+            request_id = "request-{}".format(delivery_id)
+            callback = mocker.Mock()
+            request = Message(properties=Properties(message_id=request_id))
+            management._pending_operations.append(PendingManagementOperation(request, callback))
+            response = Message(
+                properties=Properties(correlation_id=request_id),
+                application_properties={
+                    b"status-code": status_code,
+                    b"status-description": "response",
+                },
+            )
+            decoder.return_value = response
+            frame = TransferFrame(
+                handle=0,
+                delivery_id=delivery_id,
+                delivery_tag=str(delivery_id).encode(),
+                settled=settled,
+                more=False,
+                payload=b"response",
+            )
+
+            management._response_link._incoming_transfer(frame)
+
+            callback.assert_called_once_with(
+                expected_result, status_code, "response", response, None
+            )
+            assert management._pending_operations == []
+            if settled:
+                session._outgoing_disposition.assert_not_called()
+            else:
+                session._outgoing_disposition.assert_called_once()
+                disposition = session._outgoing_disposition.call_args.args[0]
+                assert disposition.role == Role.Receiver
+                assert disposition.first == delivery_id
+                assert disposition.settled is True
+                assert isinstance(disposition.state, Accepted)
+                assert frame.delivery_tag not in management._response_link._received_delivery_tags
